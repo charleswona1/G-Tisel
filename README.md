@@ -36,8 +36,8 @@ Sur la machine du développeur, en revanche il est à créer à la racine du pro
 
 
 ```
-APP_NAME=ENACP
-APP_ENV=test
+APP_NAME=G-TISEL
+APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
 APP_URL=http://127.0.0.1:8000/
@@ -46,7 +46,7 @@ LOG_CHANNEL=stack
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=enacp
+DB_DATABASE=gtisel_bd
 DB_USERNAME=YOUR_DB_USERNAME
 DB_PASSWORD=YOUR_DB_PASSWORD
 
