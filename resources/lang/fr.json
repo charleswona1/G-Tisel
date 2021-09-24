@@ -5,6 +5,8 @@
     "navbar register": "Inscription",
     "navbar langue": "Langue",
     "navbar england": "Anglais",
-    "navbar french": "Français"
+    "navbar french": "Français",
+
+    "register name": "noms"
 
 }

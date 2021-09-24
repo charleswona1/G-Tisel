@@ -22,8 +22,8 @@
                     {{__('navbar site')}}
                 </a>
             </li>
-            <li class="nav-item mx-3 {{ Request::is($lang.'/register*') ? 'link-Active' : '' }}">
-                <a class="nav-link {{ Request::is($lang.'/register*')  ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="#">
+            <li class="nav-item mx-3 {{ Request::is($lang.'/public/auth/register*') ? 'link-Active' : '' }}">
+                <a class="nav-link {{ Request::is($lang.'/public/auth/register*')  ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.auth.register',$lang)}}">
                     <i class="fas fa-user-plus fa-2x mb-lg-1 me-3 me-lg-0"></i>
                     {{__('navbar register')}}
                 </a>

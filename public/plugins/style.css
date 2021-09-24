@@ -4,6 +4,18 @@ body {
     font-size: 14px;
 }
 
+.card {
+    border-radius: 0.75rem !important;
+}
+
+.card-header:first-child {
+    border-radius: calc(0.75rem - 1px) calc(0.75rem - 1px) 0 0 !important;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(0.75rem - 1px) calc(0.75rem - 1px) !important;
+}
+
 .navbar a {
     color: #495057 !important
 }

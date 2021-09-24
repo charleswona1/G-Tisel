@@ -21,4 +21,9 @@ Route::redirect('/','/'.App::getLocale());
 Route::prefix('{language}')->group(function(){
     Route::view('/', 'home.index')->name('index');
     Route::get('/sites', 'SitesController@index')->name('sites');
+
+    Route::prefix('public')
+     ->namespace('EspacePublic')
+     ->name('public.')
+     ->group(__DIR__ . '/web/espace-public.php');
 });

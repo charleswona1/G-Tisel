@@ -5,7 +5,11 @@
     "navbar register": "Register",
     "navbar langue": "Language",
     "navbar england": "England",
-    "navbar french": "French"
+    "navbar french": "French",
+
+    "register name": "names"
+
+
 
 
 }
