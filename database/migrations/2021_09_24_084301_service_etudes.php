@@ -14,9 +14,10 @@ class ServiceEtudes extends Migration
     public function up()
     {
         Schema::create('service_etudes', function (Blueprint $table) {
-            $table->bigIncrements('id_service_etude');
-            $table->string('libelle_service_etude', 125);
-            $table->string('phone', 125);
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('phone');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class ServiceEtudes extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('service_etudes');
     }
 }

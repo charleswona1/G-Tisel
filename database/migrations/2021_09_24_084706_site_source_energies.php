@@ -14,9 +14,12 @@ class SiteSourceEnergies extends Migration
     public function up()
     {
         Schema::create('site_source_energies', function (Blueprint $table) {
-            $table->bigIncrements('id_site_source_energie');
-            $table->integer('site_id')->index('fk_site');
-            $table->integer('source_energie_id')->index('fk_source_energie');
+            $table->bigIncrements('id');
+            $table->integer('site_id')->unsigned();
+            $table->integer('source_energie_id')->unsigned();
+            $table->foreign('site_id')->references('id')->on('sites')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('source_energie_id')->references('id')->on('source_energies')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +30,6 @@ class SiteSourceEnergies extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('site_source_energies');
     }
 }

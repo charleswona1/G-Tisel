@@ -14,10 +14,13 @@ class HistoriqueDemandeTitres extends Migration
     public function up()
     {
         Schema::create('historique_demande_titres', function (Blueprint $table) {
-            $table->bigIncrements('id_historique');
-            $table->string('status', 125);
-            $table->integer('demande_titre_id')->index('fk_demande_titre');
-            $table->integer('service_etude_id')->index('fk_service_etude');
+            $table->bigIncrements('id');
+            $table->boolean('status');
+            $table->integer('demande_titre_id')->unsigned();
+            $table->foreign('demande_titre_id')->references('id')->on('demande_titres')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('service_etude_id')->unsigned();
+            $table->foreign('service_etude_id')->references('id')->on('service_etudes')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +31,6 @@ class HistoriqueDemandeTitres extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('historique_demande_titres');
     }
 }

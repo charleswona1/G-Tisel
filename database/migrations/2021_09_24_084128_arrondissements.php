@@ -14,9 +14,11 @@ class Arrondissements extends Migration
     public function up()
     {
         Schema::create('arrondissements', function (Blueprint $table) {
-            $table->bigIncrements('id_arrondissement');
-            $table->string('libelle_arrondissement', 125);
-            $table->integer('departement_id')->index('fk_departement');
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->integer('departement_id')->unsigned();
+            $table->foreign('departement_id')->references('id')->on('departements')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +29,6 @@ class Arrondissements extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('arrondissements');
     }
 }

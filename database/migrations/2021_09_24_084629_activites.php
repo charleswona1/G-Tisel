@@ -14,9 +14,11 @@ class Activites extends Migration
     public function up()
     {
         Schema::create('activites', function (Blueprint $table) {
-            $table->bigIncrements('id_activite');
-            $table->string('libelle_activite', 125);
-            $table->integer('activite_id')->index('fk_activite_id');
+            $table->bigIncrements('id');
+            $table->string('libelle_activite');
+            $table->integer('activite_id')->unsigned();
+            $table->foreign('activite_id')->references('id')->on('activites')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +29,6 @@ class Activites extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('activites');
     }
 }

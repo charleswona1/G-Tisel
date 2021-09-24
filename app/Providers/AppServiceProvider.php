@@ -9,6 +9,7 @@ use App\View\Components\Home;
 use App\View\Components\EspacePublic;
 
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::component(App::class, 'app');
         Blade::component(Home::class, 'Home');
         Blade::component(EspacePublic::class, 'espace-public');
+
+        Schema::defaultStringLength(191);
     }
 
     /**

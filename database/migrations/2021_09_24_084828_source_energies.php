@@ -14,9 +14,10 @@ class SourceEnergies extends Migration
     public function up()
     {
         Schema::create('source_energies', function (Blueprint $table) {
-            $table->bigIncrements('id_source_energie');
-            $table->string('libelle_source_energie', 125);
-            $table->text('description_source');
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class SourceEnergies extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('source_energies');
     }
 }

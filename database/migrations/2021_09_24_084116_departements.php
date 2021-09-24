@@ -14,9 +14,11 @@ class Departements extends Migration
     public function up()
     {
         Schema::create('departements', function (Blueprint $table) {
-            $table->bigIncrements('id_departement');
-            $table->string('libelle_departement', 125);
-            $table->integer('region_id')->index('fk_region');
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->integer('region_id')->unsigned();
+            $table->foreign('region_id')->references('id')->on('regions')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +29,6 @@ class Departements extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('departements');
     }
 }

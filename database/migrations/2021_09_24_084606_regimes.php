@@ -14,8 +14,9 @@ class Regimes extends Migration
     public function up()
     {
         Schema::create('regimes', function (Blueprint $table) {
-            $table->bigIncrements('id_regime');
-            $table->string('libelle_regime', 125);
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +27,6 @@ class Regimes extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('regimes');
     }
 }

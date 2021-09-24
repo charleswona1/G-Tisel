@@ -14,17 +14,21 @@ class Sites extends Migration
     public function up()
     {
         Schema::create('sites', function (Blueprint $table) {
-            $table->bigIncrements('id_site');
-            $table->string('libelle_site', 125);
-            $table->text('description_site');
-            $table->string('image_site', 125);
-            $table->string('publication', 125);
-            $table->string('localite', 125);
-            $table->string('latitude', 125);
-            $table->string('longitude', 125);
-            $table->string('capacite', 125);
-            $table->integer('arrondissement_id')->index('fk_arrondissement');
-            $table->integer('regime_id')->index('fk_regime');
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description');
+            $table->string('url_principale');
+            $table->json('url');
+            $table->string('publication');
+            $table->string('localite');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('capacite');
+            $table->integer('arrondissement_id')->unsigned();
+            $table->foreign('arrondissement_id')->references('id')->on('arrondissements')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('regime_id')->unsigned();
+            $table->foreign('regime_id')->references('id')->on('regimes')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -35,6 +39,6 @@ class Sites extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sites');
     }
 }

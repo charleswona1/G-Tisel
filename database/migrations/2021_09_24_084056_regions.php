@@ -14,9 +14,9 @@ class Regions extends Migration
     public function up()
     {
         Schema::create('regions', function (Blueprint $table) {
-            $table->bigIncrements('region_id');
-            $table->string('libelle_region', 125);
-            //$table->integer('country_id')->index('country_id');
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,6 @@ class Regions extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('regions');
     }
 }
