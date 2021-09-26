@@ -158,7 +158,7 @@
                                 </div>
 
                                 <div class="col-2 d-flex justify-content-end icon-grey-dark">
-                                    <i class="fas fa-ellipsis-h fa-2x mb-lg-1 me-3 me-lg-0"></i>
+                                    <i class="fas fa-ellipsis-h mb-lg-1 me-3 me-lg-0"></i>
                                 </div>        
                             </div>
                             
@@ -214,7 +214,7 @@
                                 </div>
 
                                 <div class="col-2 d-flex justify-content-end icon-grey-dark">
-                                    <i class="fas fa-ellipsis-h fa-2x mb-lg-1 me-3 me-lg-0"></i>
+                                    <i class="fas fa-ellipsis-h mb-lg-1 me-3 me-lg-0"></i>
                                 </div>        
                             </div>
                             
@@ -270,7 +270,7 @@
                                 </div>
 
                                 <div class="col-2 d-flex justify-content-end icon-grey-dark">
-                                    <i class="fas fa-ellipsis-h fa-2x mb-lg-1 me-3 me-lg-0"></i>
+                                    <i class="fas fa-ellipsis-h mb-lg-1 me-3 me-lg-0"></i>
                                 </div>        
                             </div>
                             
@@ -316,7 +316,7 @@
                                     </div>
 
                                     <div class="col-2 d-flex justify-content-end icon-grey-dark">
-                                        <i class="fas fa-ellipsis-h fa-2x mb-lg-1 me-3 me-lg-0"></i>
+                                        <i class="fas fa-ellipsis-h mb-lg-1 me-3 me-lg-0"></i>
                                     </div>    
                                    
 
@@ -363,7 +363,7 @@
                                     </div>
 
                                     <div class="col-2 d-flex justify-content-end icon-grey-dark">
-                                        <i class="fas fa-ellipsis-h fa-2x mb-lg-1 me-3 me-lg-0"></i>
+                                        <i class="fas fa-ellipsis-h mb-lg-1 me-3 me-lg-0"></i>
                                     </div>    
                                 </div>
 
