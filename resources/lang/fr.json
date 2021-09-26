@@ -7,6 +7,20 @@
     "navbar england": "Anglais",
     "navbar french": "Français",
 
-    "register name": "noms"
+    "register name": "noms",
 
+    "site filtre": "Filtres",
+    "site all": "Tous",
+    "site region": "Région",
+    "site departement": "Département",
+    "site arrondissement": "Arrondissement",
+    "site regime": "Régime",
+    "site source energie": "Source d'énergie",
+    "site type exploitation": "Type d'exploitation",
+    "site label publie": "Publié le",
+    "site title":"Site(s) recommandé(s) pour vous",
+    "site subtitle": "Selon votre profil et votre historique de recherche.",
+    "site suivit": "Vos demandes de site",
+    "site postulan": "Postulants",
+    "site service": "Service traitant "
 }

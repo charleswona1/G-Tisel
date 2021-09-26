@@ -7,9 +7,20 @@
     "navbar england": "England",
     "navbar french": "French",
 
-    "register name": "names"
+    "register name": "names",
 
-
-
-
+    "site filtre": "Filters",
+    "site all": "All",
+    "site region": "Region",
+    "site departement": "Department",
+    "site arrondissement": "Borough",
+    "site regime": "Diet",
+    "site source energie": "Power source",
+    "site type exploitation": "Type of operation",
+    "site label publie": "Published on",
+    "site title":"Recommended site(s) for you",
+    "site subtitle": "Depending on your profile and search history.",
+    "site suivit": "Your site requests",
+    "site postulan": "Applicants",
+    "site service": "Referring department "
 }
