@@ -117,7 +117,10 @@
                                 </div>
 
                                 <div class="col-8">
-                                    <p class="title-site" >Barrage hydroélectrique de Foumbot </p>
+                                    <a href=""> 
+                                        <p class="title-site" >Barrage hydroélectrique de Foumbot </p>
+                                    </a>
+                                    
                                     <p class="mb-1 description-site"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quae fugiat
                                      quisquam obcaecati sunt quasi. Quisquam aliquam architecto illo enim adipisci alias temporibus... </p>
                                     <div class="d-flex">
@@ -173,7 +176,10 @@
                                 </div>
 
                                 <div class="col-8">
+                                    <a href=""> 
                                     <p class="title-site" >Station eolienne de Koumba </p>
+                                    </a>
+                                    
                                     <p class="mb-1 description-site"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quae fugiat
                                      quisquam obcaecati sunt quasi. Quisquam aliquam architecto illo enim adipisci alias temporibus... </p>
                                     <div class="d-flex">
@@ -229,7 +235,10 @@
                                 </div>
 
                                 <div class="col-8">
-                                    <p class="title-site" >Station solaire de kousserie </p>
+                                    <a href=""> 
+                                        <p class="title-site" >Station solaire de kousserie </p>
+                                    </a>
+                                   
                                     <p class="mb-1 description-site"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quae fugiat
                                      quisquam obcaecati sunt quasi. Quisquam aliquam architecto illo enim adipisci alias temporibus... </p>
                                     <div class="d-flex">
