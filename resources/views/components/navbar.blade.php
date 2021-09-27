@@ -28,8 +28,8 @@
                     {{__('navbar register')}}
                 </a>
             </li>
-            <li class="nav-item mx-3 {{ Request::is($lang.'/login*') ? 'link-Active' : '' }}">
-                <a class="nav-link {{ Request::is($lang.'/login*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="#">
+            <li class="nav-item mx-3 {{ Request::is($lang.'/public/auth/login*') ? 'link-Active' : '' }}">
+                <a class="nav-link {{ Request::is($lang.'/public/auth/login*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.auth.login',$lang)}}">
                     <i class="fas fa-sign-in-alt fa-2x mb-lg-1 me-3 me-lg-0"></i>
                     {{__('navbar login')}}
                 </a>
@@ -42,13 +42,13 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li>
-                        <a class="dropdown-item" href="{{route(Route::currentRouteName(), 'en')}}">
+                        <a class="dropdown-item lang-en" href="{{route(Route::currentRouteName(), 'en')}}">
                             <img src="{{asset('assets/img/flagEn.png')}}" alt="{{__('navbar england')}}"> {{__('navbar england')}}
                         </a>
                     </li>
                   <li><hr class="dropdown-divider"></li>
                   <li>
-                        <a class="dropdown-item" href="{{route(Route::currentRouteName(), 'fr')}}">
+                        <a class="dropdown-item lang-fr" href="{{route(Route::currentRouteName(), 'fr')}}">
                             <img src="{{asset('assets/img/flagFr.png')}}" alt="{{__('navbar french')}}"> {{__('navbar french')}}
                         </a>
                     </li>

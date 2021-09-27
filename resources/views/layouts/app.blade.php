@@ -6,7 +6,7 @@
 @endphp
 @section('body')
     <x-navbar></x-navbar>
-    @if(Request::is($lang))
+    @if(Request::is($lang) || Request::is($lang.'/public/auth/login*') || Request::is($lang.'/public/auth/register*')  )
         {{$slot}}
     @else
         <div class="container mt-5">

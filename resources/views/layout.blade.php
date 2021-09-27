@@ -15,7 +15,7 @@
     <script defer src="{{ asset('fontawesome/js/all.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/style.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('plugins/stepper/bs-stepper.min.css') }}">    
     
     <style>
         body {
@@ -56,6 +56,7 @@
     
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="{{ asset('plugins/stepper/bs-stepper.min.js') }}"></script>
     
     <script>
         document.addEventListener("DOMContentLoaded", function(){
@@ -83,14 +84,25 @@
                         el_link.classList.remove('show');
                         nextEl.classList.remove('show');
                     }
-    
-    
                 })
             });
     
         }
         // end if innerWidth
         }); 
+    </script>
+    <script>
+        $(document).ready(function () {
+            
+            $('.lang-en').click(function(){
+               
+                sessionStorage.setItem('lang', 'en');
+            }) ;
+            $('.lang-fr').click(function(){
+               
+                sessionStorage.setItem('lang', 'fr');
+            })           
+        })
     </script>
 
     @stack('javascripts')

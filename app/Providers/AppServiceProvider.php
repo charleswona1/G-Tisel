@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use App\View\Components\Navbar;
 use App\View\Components\App;
 use App\View\Components\Home;
+use App\View\Components\FormGroup;
+use App\View\Components\Errors;
 use App\View\Components\EspacePublic;
 
 use Illuminate\Support\Facades\Blade;
@@ -23,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::component(Navbar::class, 'navbar');
         Blade::component(App::class, 'app');
         Blade::component(Home::class, 'Home');
+        Blade::component(FormGroup::class, 'form-group');
+        Blade::component(Errors::class, 'errors');
         Blade::component(EspacePublic::class, 'espace-public');
 
         Schema::defaultStringLength(191);
