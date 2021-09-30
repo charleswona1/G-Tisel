@@ -19,10 +19,9 @@ class Authenticate
 
         Auth::shouldUse($guard);
     
-
         if (Auth::user() instanceof User) {
         
-            if (request()->is('email/verify/*')) {
+            if (Auth::user()->email_verified_at != null && (request()->is('email/verify/*') || request()->is('email/verify'))) {
                 return redirect()->route('auth.success', ['language'=>'fr']);
             }
         }

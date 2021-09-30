@@ -21,20 +21,18 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
-        $credentials['active'] = true;
-
-        if (Auth::guard('web')->attempt($credentials, $request->get('remember'))) {
-
+        if (Auth::attempt($credentials, $request->get('remember'))) {
+            $request->session()->regenerate();
             $user = User::where('email',$credentials['email'])->first();
             $user->last_login_at = Carbon::now();
             $user->save();
 
-            return redirect()->intended(route('public.index'));
+            return redirect()->intended(route('public.index',['language'=>$lang]));
         }
 
 
         Session::flash('error', "Aucun compte n'a été trouvé avec ces identifiants");
 
-        return redirect()->route('public.auth.login');
+        return redirect()->route('public.auth.login',['language'=>$lang]);
     }
 }

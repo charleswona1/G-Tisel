@@ -30,6 +30,6 @@ class EspacePublic extends Component
     public function render()
     {
         $title = $this->title;
-        return view('components.espace-public');
+        return view('components.espace-public', compact('title'));
     }
 }

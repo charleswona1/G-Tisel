@@ -101,7 +101,10 @@
             $('.lang-fr').click(function(){
                
                 sessionStorage.setItem('lang', 'fr');
-            })           
+            }) ;
+            
+            $('#myToast').toast('show');
+               
         })
     </script>
 

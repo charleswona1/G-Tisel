@@ -1,11 +1,14 @@
 {
     "navbar home": "Home",
-    "navbar site": "Site",
+    "navbar site": "Sites",
     "navbar login": "Login",
     "navbar register": "Register",
     "navbar langue": "Language",
     "navbar england": "England",
     "navbar french": "French",
+    "navbar my-site": "My sites",
+    "navbar profile": "My profile",
+    "navbar logout": "Log out",
 
     "register title": "register",
     "register steppe1": "Personal informations",
@@ -57,9 +60,23 @@
     "verification resent-mail": "click here to request another",
     "verification verified": "email verification was successful",
     "verification here": "here",
-    "verification connect": "log in to your space"
+    "verification connect": "log in to your space",
 
 
 
 
+    "site filtre": "Filters",
+    "site all": "All",
+    "site region": "Region",
+    "site departement": "Department",
+    "site arrondissement": "Borough",
+    "site regime": "Diet",
+    "site source energie": "Power source",
+    "site type exploitation": "Type of operation",
+    "site label publie": "Published on",
+    "site title": "Recommended site(s) for you",
+    "site subtitle": "Depending on your profile and search history.",
+    "site suivit": "Your site requests",
+    "site postulan": "Applicants",
+    "site service": "Referring department "
 }

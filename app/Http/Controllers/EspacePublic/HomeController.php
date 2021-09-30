@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index($lang){
-        return "espace public";
+        return view('public.home.index', compact('lang'));
     }
 }

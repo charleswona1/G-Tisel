@@ -11,11 +11,23 @@ Route::prefix('auth')->namespace('Auth')->name('auth.')->group(function() {
         Route::get('register', 'RegisterController@index')->name('register');
         Route::post('register', 'RegisterController@store');
     });
+
+    Route::middleware(['auth', 'verified'])->group(function () {
+        Route::get('/logout', 'LogoutController@logOut')->name('logout');
+    });
     
 });
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', 'HomeController@index')->name('index');
+   
+    Route::prefix('account')->namespace('Accounts')->name('account.')->group(function(){
+        Route::get('/','ProfileController@index' )->name('index');
+    });
 });
+
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/', 'HomeController@index')->name('index');
+// });
 

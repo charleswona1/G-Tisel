@@ -1,11 +1,14 @@
 {
     "navbar home": "Accueil",
-    "navbar site": "Site",
+    "navbar site": "Sites",
     "navbar login": "Connexion",
     "navbar register": "Inscription",
     "navbar langue": "Langue",
     "navbar england": "Anglais",
     "navbar french": "Français",
+    "navbar my-site": "Mes sites",
+    "navbar profile": "Mon profile",
+    "navbar logout": "Déconnexion",
 
     "register title": "Inscription",
     "register steppe1": "Informations personnelles",
@@ -57,7 +60,21 @@
     "verification resent-mail": "cliquez ici pour demander un autre",
     "verification verified": "la verification du mail a été un succès",
     "verification here": "Ici",
-    "verification connect": "connectez-vous à votre espace"
+    "verification connect": "connectez-vous à votre espace",
 
 
+    "site filtre": "Filtres",
+    "site all": "Tous",
+    "site region": "Région",
+    "site departement": "Département",
+    "site arrondissement": "Arrondissement",
+    "site regime": "Régime",
+    "site source energie": "Source d'énergie",
+    "site type exploitation": "Type d'exploitation",
+    "site label publie": "Publié le",
+    "site title": "Site(s) recommandé(s) pour vous",
+    "site subtitle": "Selon votre profil et votre historique de recherche.",
+    "site suivit": "Vos demandes de site",
+    "site postulan": "Postulants",
+    "site service": "Service traitant "
 }
