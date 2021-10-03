@@ -4,22 +4,16 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class EspacePublic extends Component
+class Errors extends Component
 {
-    /**
-     * @var string
-     */
-    public $title;
-
     /**
      * Create a new component instance.
      *
-     * @param string title
      * @return void
      */
-    public function __construct(string $title)
+    public function __construct()
     {
-        $this->title = $title;
+        
     }
 
     /**
@@ -29,7 +23,7 @@ class EspacePublic extends Component
      */
     public function render()
     {
-        $title = $this->title;
-        return view('components.espace-public', compact('title'));
+      
+        return view('components.errors');
     }
 }
