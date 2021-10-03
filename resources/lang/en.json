@@ -7,7 +7,7 @@
     "navbar england": "England",
     "navbar french": "French",
     "navbar my-site": "My sites",
-    "navbar profile": "My profile",
+    "navbar condition": "Documentations",
     "navbar logout": "Log out",
 
     "register title": "register",
@@ -77,6 +77,9 @@
     "site title": "Recommended site(s) for you",
     "site subtitle": "Depending on your profile and search history.",
     "site suivit": "Your site requests",
-    "site postulan": "Applicants",
-    "site service": "Referring department "
+    "site postulant": "Applicants",
+    "site service": "Referring department ",
+    "site title-detail": "Site detail: :",
+
+    "demande": "Request a title"
 }

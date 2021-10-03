@@ -16,6 +16,9 @@
             {{$slot}}
         </div>
     @endif
+
+    
+    
 @endsection
 
 @if (isset($javascripts))

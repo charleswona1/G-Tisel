@@ -7,6 +7,7 @@
     "navbar england": "Anglais",
     "navbar french": "Français",
     "navbar my-site": "Mes sites",
+    "navbar condition": "Documentations",
     "navbar profile": "Mon profile",
     "navbar logout": "Déconnexion",
 
@@ -75,6 +76,9 @@
     "site title": "Site(s) recommandé(s) pour vous",
     "site subtitle": "Selon votre profil et votre historique de recherche.",
     "site suivit": "Vos demandes de site",
-    "site postulan": "Postulants",
-    "site service": "Service traitant "
+    "site postulant": "Postulants",
+    "site service": "Service traitant ",
+    "site title-detail": "Detail du site :",
+
+    "demande": "Démander un titre"
 }

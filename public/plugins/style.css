@@ -1,16 +1,17 @@
 html,
-body {
+
+/* body {
     height: 100% !important;
-}
+} */
 
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #e2e8f0;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .wrapper {
-    height: calc(100% - 68.944px);
+    height: calc(100vh - 69.944px);
 }
 
 .img-bg {
@@ -123,7 +124,7 @@ body {
 }
 
 .subtitle-capacite-site {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 900;
     color: #5f994e;
 }

@@ -36,8 +36,8 @@
                                 </div>
 
                                 <div class="col-8">
-                                    <a href=""> 
-                                        <p class="title-site" >Barrage hydroélectrique de Foumbot </p>
+                                    <a href="{{Route('show',$lang)}}"> 
+                                        <p class="title-site"  >Barrage hydroélectrique de Foumbot </p>
                                     </a>
                                     
                                     <p class="mb-1 description-site"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quae fugiat

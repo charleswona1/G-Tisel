@@ -26,6 +26,7 @@ Route::redirect('/','/'.App::getLocale());
 Route::prefix('{language}')->group(function(){
     Route::view('/', 'home.index')->name('index');
     Route::get('/sites', 'SitesController@index')->name('sites');
+    Route::get('/sites/show', 'SitesController@show')->name('show');
 
     Route::view('public/auth/disabled','auth.verification_success')->name('auth.success');
 
