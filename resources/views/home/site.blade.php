@@ -78,9 +78,14 @@
         margin-bottom: 0px;
     }
 
+    .pagination-item {
+        padding : 10px;
+        background-color: orange;
+    }
+
 </style>
 
-    <div class="row" >
+    <div class="row" style="margin-bottom: 100px">
         <div class="col-lg-2 ">
             <div class="card">
                 <div class="card-header">
@@ -286,9 +291,6 @@
                         </li>
                     </ul>
                 </div>
-                <div class="card-footer text-muted">
-                  2 days ago
-                </div>
             </div>
         </div>
         <div class="col-lg-4">
@@ -395,6 +397,7 @@
                             </li>
                         </ul>
                     </div>
+                    
                 </div>
             </div>
         </div>
