@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    
+     <x-footer></x-footer>  
     
 @endsection
 
