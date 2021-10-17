@@ -34,14 +34,20 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="{{route('locale.set', 'en')}}">
-                                {{__('navbar england')}}
+                            <a class="dropdown-item {{ Request::is('documentation/text-juridique*') ? 'active' : '' }}" href="{{route('text-juridique')}}">
+                                <i class="fas fa-gavel me-2"></i>  {{__('navbar juridic')}}
                             </a>
                         </li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li>
-                            <a class="dropdown-item lang-fr" href="{{route('locale.set', 'fr')}}">
-                                {{__('navbar french')}}
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item {{ Request::is('documentation/procedure*') ? 'active' : '' }}" href="{{route('procedure')}}">
+                                <i class="fas fa-tasks me-2"></i>  {{__('navbar procedure')}}
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item {{ Request::is('documentation/regime*') ? 'active' : '' }}" href="{{route('regime')}}">
+                                <i class="fas fa-file me-2"></i>  {{__('navbar regime')}}
                             </a>
                         </li>
                     </ul>

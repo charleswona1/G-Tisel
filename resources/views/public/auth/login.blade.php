@@ -32,12 +32,12 @@
                             <div class="col">
                                 <small>
                                     {{__('login no-account')}}
-                                    <a href="{{route('public.auth.register',$lang)}}">{{__('login register')}}</a>
+                                    <a href="{{route('public.auth.register')}}">{{__('login register')}}</a>
                                 </small>
                             </div>
                             <div class="col text-end">
                                 <small>
-                                    <a href="{{route('public.auth.register',$lang)}}">{{__('login password-forget')}}</a>
+                                    <a href="{{route('public.auth.register')}}">{{__('login password-forget')}}</a>
                                 </small>
                             </div>
                         </div>

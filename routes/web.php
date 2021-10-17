@@ -39,7 +39,12 @@ Route::prefix('admin')
     ->name('admin.')
     ->group(__DIR__ . '/web/admin.php');
 
-Route::get('/documentation','DocumentsController@index')->name('documentation');
+Route::prefix('documentation')->group(function(){
+    Route::get('/text-juridique','DocumentsController@juridic')->name('text-juridique');
+    Route::get('/regime','DocumentsController@regime')->name('regime');
+    Route::get('/procedure','DocumentsController@procedure')->name('procedure');
+});
+
 
 Route::prefix('email')->namespace('Auth')->name('verification.')->group(function() {
     Route::middleware('auth')->group(function () {

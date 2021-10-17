@@ -15,8 +15,8 @@ class Site extends Model
         return $this->hasMany(UploadFileSite::class);
     }
 
-    public function SiteSourceEnergie(){
-        return $this->hasMany(SiteSourceEnergie::class);
+    public function SourceEnergie(){
+        return $this->belongsTo(SourceEnergie::class);
     }
 
     public function Regime(){

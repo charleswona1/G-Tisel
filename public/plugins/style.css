@@ -173,3 +173,8 @@ body {
 .image-link {
     height: 225px;
 }
+
+.dropdown-item.active,
+.dropdown-item::active {
+    color: #FFF !important;
+}

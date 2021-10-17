@@ -10,6 +10,12 @@
     "navbar condition": "Documentations",
     "navbar profile": "Mon profile",
     "navbar logout": "Déconnexion",
+    "navbar juridic": "Texte juridique",
+    "navbar procedure": "Procédure ",
+    "navbar regime": "Régime",
+    "navbar loi": "Texte de Loi",
+    "navbar decret": "Décret",
+    "navbar arrete": "Arrêté",
 
     "register title": "Inscription",
     "register steppe1": "Informations personnelles",
