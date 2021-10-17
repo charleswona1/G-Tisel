@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Session;
 class LoginController extends Controller
 {
     public function index(){
-        return view('public.auth.login',compact('lang'));
+        return view('public.auth.login');
     }
 
     public function store(Request $request){

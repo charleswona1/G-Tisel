@@ -31,6 +31,30 @@
                         {{__('navbar condition')}}
                     </a>
                 </li>
+
+
+                <li class="nav-item dropdown mx-3 {{ Request::is('documentation*') ? 'link-Active' : '' }}">
+                    <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <p class="mb-0 text-center d-none d-lg-block"><i class="fas fa-book fa-2x"></i></p>
+                        <i class="fas fa-book fa-2x d-lg-none me-3 me-lg-0"></i>
+                        {{__('navbar condition')}} : {{$lang == 'en'? 'en': 'fr'}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item lang-en" href="{{route('locale.set', 'en')}}">
+                                <img src="{{asset('assets/img/flagEn.png')}}" alt="{{__('navbar england')}}"> {{__('navbar england')}}
+                            </a>
+                        </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                            <a class="dropdown-item lang-fr" href="{{route('locale.set', 'fr')}}">
+                                <img src="{{asset('assets/img/flagFr.png')}}" alt="{{__('navbar french')}}"> {{__('navbar french')}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
                 <li class="nav-item mx-3 {{ Request::is('public/auth/register*') ? 'link-Active' : '' }}">
                     <a class="nav-link {{ Request::is('public/auth/register*')  ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.auth.register')}}">
                         <i class="fas fa-user-plus fa-2x mb-lg-1 me-3 me-lg-0"></i>
@@ -43,6 +67,7 @@
                         {{__('navbar login')}}
                     </a>
                 </li>
+                
                 @php
                     \Debugbar::info("route");
                     \Debugbar::info(Route::currentRouteName())
@@ -101,6 +126,7 @@
                         {{__('navbar condition')}}
                     </a>
                 </li>
+                
                 <li class="nav-item dropdown mx-3">
                     <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <p class="mb-0 text-center d-none d-lg-block"><i class="far fa-user-circle fa-2x"></i></p>
