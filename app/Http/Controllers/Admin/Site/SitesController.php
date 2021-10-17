@@ -38,6 +38,7 @@ class SitesController extends Controller
             'capacite' => ['required'],
             'arrondissement_id' => ['required'],
             'regime_id' => ['required'],
+            'site_id' => ['required'],
             'source_energie_id' => ['required'],
             'files' => ['required'],
             'files.*' => ['mimes:jpeg,jpg,png','max:4096']

@@ -17,9 +17,11 @@ class DemandeTitres extends Migration
             $table->bigIncrements('id');
             $table->string('status');
             $table->integer('user_id')->unsigned();
+            $table->integer('site_id')->unsigned();
+            $table->integer('activite_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('site_source_energie_id')->unsigned();
-            $table->foreign('site_source_energie_id')->references('id')->on('site_source_energies')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('site_id')->references('id')->on('sites')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('activite_id')->references('id')->on('activites')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
