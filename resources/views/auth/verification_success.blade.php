@@ -22,7 +22,7 @@
                 @endif
                 <span>
                     {{ __("verification connect") }}, 
-                    <a href="{{ route('public.auth.login',['language'=>'fr'])}}">{{ __('verification here') }}</a>.
+                    <a href="{{ route('public.auth.login')}}">{{ __('verification here') }}</a>.
                 </span>
                 
             </div>
