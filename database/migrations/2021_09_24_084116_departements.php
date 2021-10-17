@@ -16,7 +16,7 @@ class Departements extends Migration
         Schema::create('departements', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('region_id')->unsigned();
+            $table->unsignedInteger('region_id');
             $table->foreign('region_id')->references('id')->on('regions')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
