@@ -38,7 +38,6 @@ class SitesController extends Controller
             'capacite' => ['required'],
             'arrondissement_id' => ['required'],
             'regime_id' => ['required'],
-            'site_id' => ['required'],
             'source_energie_id' => ['required'],
             'files' => ['required'],
             'files.*' => ['mimes:jpeg,jpg,png','max:4096']
@@ -66,11 +65,6 @@ class SitesController extends Controller
             $upload->save();
 
         }
-
-        $siteSource = new SiteSourceEnergie();
-        $siteSource->site_id = $site->id;
-        $siteSource->source_energie_id = $request->source_energie_id;
-        $siteSource->save();
 
         Session::flash('success', "site ajouté avec succes");
 
