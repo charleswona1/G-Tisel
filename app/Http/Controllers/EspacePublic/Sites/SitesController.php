@@ -8,17 +8,17 @@ use Illuminate\Http\Request;
 
 class SitesController extends Controller
 {
-    public function index($lang){
+    public function index(){
         $sites = Site::all();
         \Debugbar::info($sites);
-        return view("public.site.index",compact('lang','sites'));
+        return view("public.site.index",compact('sites'));
     }
 
-    public function show($lang, Site $site){
-        return view("public.site.show",compact("lang","site"));
+    public function show(Site $site){
+        return view("public.site.show",compact("site"));
     }
 
-    public function demand($lang, Site $site){
-        return view("public.site.demand",compact("lang","site"));
+    public function demand(Site $site){
+        return view("public.site.demand",compact("site"));
     }
 }

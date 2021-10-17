@@ -21,26 +21,25 @@ use Illuminate\Support\Facades\Auth;
 
 // $language = App::getLocale();
 
-Route::redirect('/','/'.App::getLocale());
+Route::get('local/{locale}','SetLanguageController@switchLocale')->name('locale.set');
 
-Route::prefix('{language}')->group(function(){
-    Route::view('/', 'home.index')->name('index');
-    Route::get('/sites', 'SitesController@index')->name('sites');
-    Route::get('/sites/{site}/show', 'SitesController@show')->name('show');
+Route::view('/', 'home.index')->name('index');
+Route::get('/sites', 'SitesController@index')->name('sites');
+Route::get('/sites/{site}/show', 'SitesController@show')->name('show');
 
-    Route::view('public/auth/disabled','auth.verification_success')->name('auth.success');
+Route::view('public/auth/disabled','auth.verification_success')->name('auth.success');
 
-    Route::prefix('public')
-     ->namespace('EspacePublic')
-     ->name('public.')
-     ->group(__DIR__ . '/web/espace-public.php');
+Route::prefix('public')
+    ->namespace('EspacePublic')
+    ->name('public.')
+    ->group(__DIR__ . '/web/espace-public.php');
 
-     Route::prefix('admin')
-     ->namespace('Admin')
-     ->name('admin.')
-     ->group(__DIR__ . '/web/admin.php');
-     
-});
+Route::prefix('admin')
+    ->namespace('Admin')
+    ->name('admin.')
+    ->group(__DIR__ . '/web/admin.php');
+
+Route::get('/documentation','DocumentsController@index')->name('documentation');
 
 Route::prefix('email')->namespace('Auth')->name('verification.')->group(function() {
     Route::middleware('auth')->group(function () {

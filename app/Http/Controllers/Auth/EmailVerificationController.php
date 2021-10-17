@@ -29,6 +29,6 @@ class EmailVerificationController extends Controller
         $user->email_verified_at = Carbon::now();
         $user->save(); 
         $request->fulfill();
-        return redirect()->to('/fr/public/auth/login');
+        return redirect()->to('/public/auth/login');
     }
 }

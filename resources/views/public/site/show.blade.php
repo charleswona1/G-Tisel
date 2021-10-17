@@ -6,7 +6,7 @@
                     <div class="d-flex justify-content-between">
                         <p class="title-normal"> {{__('site title-detail')}} {{$site->name}}</p>
                         <div>
-                            <a class="btn btn-primary btn-sm" href="{{route('public.demand',[$lang,$site])}}" role="button">Demander</a>
+                            <a class="btn btn-primary btn-sm" href="{{route('public.demand',$site)}}" role="button">Demander</a>
                         </div>
                         
                     </div>

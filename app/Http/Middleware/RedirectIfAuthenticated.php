@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
     {
         
         if (Auth::guard($guard)->check()) {
-            return redirect()->to('/fr/public');
+            return redirect()->to('/public');
         }
 
         

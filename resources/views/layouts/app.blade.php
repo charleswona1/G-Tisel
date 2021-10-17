@@ -7,7 +7,7 @@
 @section('body')
     <x-navbar></x-navbar>
     <x-flash-bag></x-flash-bag>
-    @if(Request::is($lang) || Request::is($lang.'/public/auth/login*') || Request::is($lang.'/public/auth/register*')  )
+    @if(Request::is('/') || Request::is('public/auth/login*') || Request::is('public/auth/register*')  )
         <x-flash-bag></x-flash-bag>
         {{$slot}}
     @else

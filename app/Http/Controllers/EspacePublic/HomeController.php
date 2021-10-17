@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index($lang){
+    public function index(){
         $sites = Site::all();
         \Debugbar::info($sites);
-        return view('public.home.index', compact('lang','sites'));
+        return view('public.home.index', compact('sites'));
     }
 }

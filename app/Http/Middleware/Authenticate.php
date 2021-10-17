@@ -14,7 +14,7 @@ class Authenticate
     {
         if (!Auth::guard($guard)->check()) {
 
-             return redirect()->route('public.auth.login', ['language'=>'fr']);
+             return redirect()->route('public.auth.login');
         }
 
         Auth::shouldUse($guard);
@@ -22,7 +22,7 @@ class Authenticate
         if (Auth::user() instanceof User) {
         
             if (Auth::user()->email_verified_at != null && (request()->is('email/verify/*') || request()->is('email/verify'))) {
-                return redirect()->route('auth.success', ['language'=>'fr']);
+                return redirect()->route('auth.success');
             }
         }
 

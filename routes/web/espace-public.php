@@ -35,6 +35,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
+Route::get('/documentation','DocumentsController@index')->name('documentation');
+
 // Route::middleware(['auth'])->group(function () {
 //     Route::get('/', 'HomeController@index')->name('index');
 // });

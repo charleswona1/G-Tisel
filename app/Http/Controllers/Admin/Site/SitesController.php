@@ -18,14 +18,14 @@ class SitesController extends Controller
 
     }
 
-    public function create($lang){
+    public function create(){
         $arrondissements = Arrondissement::all();
         $regimes = Regime::all();
         $sourceEnergies = SourceEnergie::all();
-        return view('admin.sites.form',compact('lang','arrondissements','regimes','sourceEnergies'));
+        return view('admin.sites.form',compact('arrondissements','regimes','sourceEnergies'));
     }
 
-    public function store($lang, Request $request){
+    public function store(Request $request){
 
 
         $data = $request->validate([
@@ -73,7 +73,7 @@ class SitesController extends Controller
 
         Session::flash('success', "site ajouté avec succes");
 
-        return redirect()->route('admin.create',['language'=>$lang]);
+        return redirect()->route('admin.create');
 
     }
 

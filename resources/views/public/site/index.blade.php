@@ -40,7 +40,7 @@
                                     </div>
 
                                     <div class="col-8">
-                                        <a href="{{Route('public.show',[$lang,$site])}}"> 
+                                        <a href="{{Route('public.show',$site)}}"> 
                                             <p class="title-site"  >{{$site->name}}</p>
                                         </a>
                                         

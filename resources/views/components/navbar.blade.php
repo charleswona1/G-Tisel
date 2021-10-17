@@ -13,32 +13,32 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-3 {{ Request::is($lang)  ? 'link-Active' : '' }} ">
-                    <a class="nav-link {{ Request::is($lang)  ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('index',$lang)}}">
+                <li class="nav-item mx-3 {{ Request::is("/")  ? 'link-Active' : '' }} ">
+                    <a class="nav-link {{ Request::is("/")  ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('index')}}">
                         <i class="icon fa fa-home fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar home')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is($lang.'/sites*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('sites',$lang)}}">
+                <li class="nav-item mx-3 {{ Request::is('sites*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('sites')}}">
                         <i class="fas fa-bolt fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar site')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is($lang.'/documentation*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/documentation*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('sites',$lang)}}">
+                <li class="nav-item mx-3 {{ Request::is('documentation*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('documentation*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('documentation')}}">
                         <i class="fas fa-book fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar condition')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is($lang.'/public/auth/register*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/public/auth/register*')  ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.auth.register',$lang)}}">
+                <li class="nav-item mx-3 {{ Request::is('public/auth/register*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('public/auth/register*')  ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.auth.register')}}">
                         <i class="fas fa-user-plus fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar register')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is($lang.'/public/auth/login*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/public/auth/login*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.auth.login',$lang)}}">
+                <li class="nav-item mx-3 {{ Request::is('public/auth/login*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('public/auth/login*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.auth.login')}}">
                         <i class="fas fa-sign-in-alt fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar login')}}
                     </a>
@@ -47,7 +47,7 @@
                     \Debugbar::info("route");
                     \Debugbar::info(Route::currentRouteName())
                 @endphp
-                {{-- <li class="nav-item dropdown mx-3">
+                <li class="nav-item dropdown mx-3">
                     <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <p class="mb-0 text-center d-none d-lg-block"><i class="fas fa-flag fa-2x"></i></p>
                         <i class="fas fa-flag fa-2x d-lg-none me-3 me-lg-0"></i>
@@ -55,18 +55,18 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item lang-en" href="{{route(Route::currentRouteName(), 'en')}}">
+                            <a class="dropdown-item lang-en" href="{{route('locale.set', 'en')}}">
                                 <img src="{{asset('assets/img/flagEn.png')}}" alt="{{__('navbar england')}}"> {{__('navbar england')}}
                             </a>
                         </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                            <a class="dropdown-item lang-fr" href="{{route(Route::currentRouteName(), 'fr')}}">
+                            <a class="dropdown-item lang-fr" href="{{route('locale.set', 'fr')}}">
                                 <img src="{{asset('assets/img/flagFr.png')}}" alt="{{__('navbar french')}}"> {{__('navbar french')}}
                             </a>
                         </li>
                     </ul>
-                </li> --}}
+                </li>
             </ul>
             </div>
         </div>
@@ -83,20 +83,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
 
-                <li class="nav-item mx-3 {{ Request::is($lang.'/public*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/public*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.site',$lang)}}">
+                <li class="nav-item mx-3 {{ Request::is('public*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('public*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.site')}}">
                         <i class="fas fa-bolt fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar site')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is($lang.'/public/sites*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/public/sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.my-sites',$lang)}}">
+                <li class="nav-item mx-3 {{ Request::is('public/sites*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('public/sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.my-sites')}}">
                         <i class="far fa-stream fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar my-site')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is($lang.'/public/documents*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/public/documents*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('sites',$lang)}}">
+                <li class="nav-item mx-3 {{ Request::is('public/documentation*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('public/documentation*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.documentation')}}">
                         <i class="fas fa-book fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar condition')}}
                     </a>
@@ -108,8 +108,8 @@
                         {{Auth::user()->user_name}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li class="{{ Request::is($lang.'/public/account*') ? 'fw-bold' : '' }}">
-                            <a class="dropdown-item lang-en" href="{{route('public.account.index',$lang)}}">
+                        <li class="{{ Request::is('public/account*') ? 'fw-bold' : '' }}">
+                            <a class="dropdown-item lang-en" href="{{route('public.account.index')}}">
                                 <i class="far fa-user-circle me-2"></i> {{__('navbar profile')}} 
                             </a>
                         </li>
@@ -122,7 +122,7 @@
                     </ul>
                 </li>
                
-                {{-- <li class="nav-item dropdown mx-3">
+                <li class="nav-item dropdown mx-3">
                     <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <p class="mb-0 text-center d-none d-lg-block"><i class="fas fa-flag fa-2x"></i></p>
                         <i class="fas fa-flag fa-2x d-lg-none me-3 me-lg-0"></i>
@@ -130,18 +130,18 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item lang-en" href="{{route(Route::currentRouteName(), 'en')}}">
+                            <a class="dropdown-item lang-en" href="{{route('locale.set','en')}}">
                                 <img src="{{asset('assets/img/flagEn.png')}}" alt="{{__('navbar england')}}"> {{__('navbar england')}}
                             </a>
                         </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                            <a class="dropdown-item lang-fr" href="{{route(Route::currentRouteName(), 'fr')}}">
+                            <a class="dropdown-item lang-fr" href="{{route('locale.set','fr')}}">
                                 <img src="{{asset('assets/img/flagFr.png')}}" alt="{{__('navbar french')}}"> {{__('navbar french')}}
                             </a>
                         </li>
                     </ul>
-                </li> --}}
+                </li>
             </ul>
             </div>
         </div>

@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
-    public function index($lang){
-        return view('public.auth.register',compact('lang'));
+    public function index(){
+        return view('public.auth.register');
     }
 
-    public function store($lang, Request $request){
+    public function store(Request $request){
         $data = $request->validate([
             'fisrt_name' => [''],
             'last_name' => ['required'],
@@ -39,10 +39,10 @@ class RegisterController extends Controller
             Auth::login($user);
             event(new Registered($user));
             Session::flash('success', "<strong>Votre compte a bien été créé</strong><br/>Votre compte devra être activé pour accéder à la plateforme. Vous serez averti par e-mail.");
-            return redirect()->route('verification.notice',['language'=>$lang]);
+            return redirect()->route('verification.notice');
         }else {
             Session::flash('error', "<strong>La création de votre compte n'a pas pu être finalisée.</strong><br/>Merci de remplir à nouveau le formulaire, en remplissant tous les champs obligatoires.");
-            return redirect()->route('public.auth.register',$lang);
+            return redirect()->route('public.auth.register');
         }
     }
 }

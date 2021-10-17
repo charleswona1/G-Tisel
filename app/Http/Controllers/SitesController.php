@@ -8,13 +8,13 @@ use App\Models\Site;
 
 class SitesController extends Controller
 {
-    public function index($lang){
+    public function index(){
         $sites = Site::all();
         \Debugbar::info($sites);
-        return view("home.site",compact('lang','sites'));
+        return view("home.site",compact('sites'));
     }
 
-    public function show($lang, Site $site){
-        return view("home.show",compact("lang","site"));
+    public function show( Site $site){
+        return view("home.show",compact("site"));
     }
 }
