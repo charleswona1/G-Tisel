@@ -16,6 +16,7 @@ class SourceEnergies extends Migration
         Schema::create('source_energies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->text('source');
             $table->text('description');
             $table->timestamps();
         });
