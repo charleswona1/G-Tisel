@@ -27,7 +27,7 @@ class LoginController extends Controller
             $user->last_login_at = Carbon::now();
             $user->save();
 
-            return redirect()->intended(route('public.index',['language'=>$lang]));
+            return redirect()->intended(route('public.site',['language'=>$lang]));
         }
 
 

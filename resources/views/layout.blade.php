@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/style.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/stepper/bs-stepper.min.css') }}">  
-    <link rel="stylesheet" href="{{ asset('plugins/magnific-popup/magnific-popup.css')}}">  
+    <link rel="stylesheet" href="{{ asset('plugins/magnific-popup/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/owl-caroussel/owl.carousel.min.css')}}">  
     
     <style>
         body {
@@ -42,10 +43,10 @@
 </head>
 <body>
     @yield('body')
-    <a href="" class="btn btn-primary btn-sm btn-floating btn-left"> {{__("demande")}}</a>
-    <a href="" class="btn btn-primary btn-sm btn-floating btn-right assensor p-3"> 
+    {{-- <a href="" class="btn btn-primary btn-sm btn-floating btn-left"> {{__("demande")}}</a> --}}
+    {{-- <a href="" class="btn btn-primary btn-sm btn-floating btn-right assensor p-3"> 
         <i class="fas fa-arrow-up"></i> 
-    </a>
+    </a> --}}
     <script>
         var colors = {
             "danger-color": "#e74c3c",
@@ -79,6 +80,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.1/viewer.min.js" integrity="sha512-2e2mvwFe4ZwNBifdDlcPESjLL+Y96YVnCM+OlKOnpHgGSN7KYxIxWlZ3kX7vQ348Mm2Kz1qmajPP/gm1gmFErA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
     <script src="{{ asset('plugins/stepper/bs-stepper.min.js') }}"></script>
     <script src="{{asset('plugins/magnific-popup/jquery.magnific-popup.js')}}"></script>
+    <script src="{{asset('plugins/owl-caroussel/owl.carousel.min.js')}}"></script>
     
     <script>
         document.addEventListener("DOMContentLoaded", function(){

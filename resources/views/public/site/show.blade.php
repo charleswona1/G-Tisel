@@ -1,4 +1,4 @@
-<x-home title="detail d'un site">
+<x-espace-public title="detail d'un site">
     <div class="row">
         <div class="col-lg-8">
             <div class="card">
@@ -280,4 +280,4 @@
             });
         </script>
     @endpush
-</x-home>
+</x-espace-public>

@@ -17,9 +17,7 @@ class Sites extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description');
-            $table->string('url_principale');
-            $table->json('url');
-            $table->string('publication');
+            $table->string('publication')->default("on")->nullable();
             $table->string('localite');
             $table->string('latitude');
             $table->string('longitude');

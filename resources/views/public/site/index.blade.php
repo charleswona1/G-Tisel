@@ -1,5 +1,4 @@
-<x-home title="Sites disponibles">
-
+<x-espace-public title="Accueil">
     <div class="row" >
         <div class="col-lg-2 ">
             <div class="card">
@@ -41,7 +40,7 @@
                                     </div>
 
                                     <div class="col-8">
-                                        <a href="{{Route('show',[$lang,$site])}}"> 
+                                        <a href="{{Route('public.show',[$lang,$site])}}"> 
                                             <p class="title-site"  >{{$site->name}}</p>
                                         </a>
                                         
@@ -214,6 +213,5 @@
             </div>
         </div>
     </div>
+</x-espace-public>
 
-
-</x-home>

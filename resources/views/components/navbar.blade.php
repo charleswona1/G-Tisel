@@ -43,7 +43,11 @@
                         {{__('navbar login')}}
                     </a>
                 </li>
-                <li class="nav-item dropdown mx-3">
+                @php
+                    \Debugbar::info("route");
+                    \Debugbar::info(Route::currentRouteName())
+                @endphp
+                {{-- <li class="nav-item dropdown mx-3">
                     <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <p class="mb-0 text-center d-none d-lg-block"><i class="fas fa-flag fa-2x"></i></p>
                         <i class="fas fa-flag fa-2x d-lg-none me-3 me-lg-0"></i>
@@ -62,7 +66,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
             </div>
         </div>
@@ -80,19 +84,19 @@
             <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item mx-3 {{ Request::is($lang.'/public*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/public*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('sites',$lang)}}">
+                    <a class="nav-link {{ Request::is($lang.'/public*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.site',$lang)}}">
                         <i class="fas fa-bolt fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar site')}}
                     </a>
                 </li>
                 <li class="nav-item mx-3 {{ Request::is($lang.'/public/sites*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/public/sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('sites',$lang)}}">
+                    <a class="nav-link {{ Request::is($lang.'/public/sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.my-sites',$lang)}}">
                         <i class="far fa-stream fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar my-site')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is($lang.'/public/sites*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is($lang.'/public/sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('sites',$lang)}}">
+                <li class="nav-item mx-3 {{ Request::is($lang.'/public/documents*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is($lang.'/public/documents*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('sites',$lang)}}">
                         <i class="fas fa-book fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar condition')}}
                     </a>
@@ -118,7 +122,7 @@
                     </ul>
                 </li>
                
-                <li class="nav-item dropdown mx-3">
+                {{-- <li class="nav-item dropdown mx-3">
                     <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <p class="mb-0 text-center d-none d-lg-block"><i class="fas fa-flag fa-2x"></i></p>
                         <i class="fas fa-flag fa-2x d-lg-none me-3 me-lg-0"></i>
@@ -137,7 +141,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
             </div>
         </div>
