@@ -16,8 +16,8 @@ class Activites extends Migration
         Schema::create('activites', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('libelle_activite');
-            $table->integer('activite_id')->unsigned();
-            $table->foreign('activite_id')->references('id')->on('activites')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('regime_id')->unsigned();
+            $table->foreign('regime_id')->references('id')->on('regimes')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

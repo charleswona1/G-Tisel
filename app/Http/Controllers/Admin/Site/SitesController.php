@@ -66,11 +66,6 @@ class SitesController extends Controller
 
         }
 
-        $siteSource = new SiteSourceEnergie();
-        $siteSource->site_id = $site->id;
-        $siteSource->source_energie_id = $request->source_energie_id;
-        $siteSource->save();
-
         Session::flash('success', "site ajouté avec succes");
 
         return redirect()->route('admin.create');
