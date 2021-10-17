@@ -25,9 +25,9 @@ class Sites extends Migration
             $table->integer('arrondissement_id')->unsigned();
             $table->foreign('arrondissement_id')->references('id')->on('arrondissements')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('regime_id')->unsigned();
-            $table->integer('sourcee_id')->unsigned();
+            $table->integer('source_id')->unsigned();
             $table->foreign('regime_id')->references('id')->on('regimes')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('sourcee_id')->references('id')->on('source_energies')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('source_id')->references('id')->on('source_energies')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

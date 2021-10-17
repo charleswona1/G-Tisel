@@ -25,8 +25,7 @@ class SitesController extends Controller
         return view('admin.sites.form',compact('arrondissements','regimes','sourceEnergies'));
     }
 
-    public function store(Request $request){
-
+    public function store(Request $request){ 
 
         $data = $request->validate([
             'name' => ['required'],
@@ -38,10 +37,9 @@ class SitesController extends Controller
             'capacite' => ['required'],
             'arrondissement_id' => ['required'],
             'regime_id' => ['required'],
-            'source_energie_id' => ['required'],
+            'source_id' => ['required'],
             'files' => ['required'],
             'files.*' => ['mimes:jpeg,jpg,png','max:4096']
-
         ]);
 
         $site = new site();

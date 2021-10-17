@@ -66,9 +66,9 @@
                     <x-form-group label="Selectioner l'arrondissement du site" class="mb-3 text-primary">
                         <select name="arrondissement_id" class="form-select" >
                             <option selected>Selectinner l'arrondissement</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            @foreach ($arrondissements as $arrondissement)
+                            <option value="{{$arrondissement->id}}">{{$arrondissement->name}}</option>
+                            @endforeach
                           </select>
                     </x-form-group>
                 </div>
@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <x-form-group label="Selectioner la ou les sources d'energie" class="mb-3 text-primary">
-                        <select name="source_energie_id" class="form-select">
+                        <select name="source_id" class="form-select">
                             <option selected>Selectinner la source d'energie</option>
                             @foreach ($sourceEnergies as $source)
                             <option value="{{$source->id}}">{{$source->name}}</option>

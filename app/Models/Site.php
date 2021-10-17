@@ -9,7 +9,7 @@ class Site extends Model
 {
     use HasFactory;
 
-    protected $fillable=["name","description","publication","localite","latitude","longitude","capacite","arrondissement_id","regime_id"];
+    protected $fillable=["name","description","publication","localite","latitude","longitude","capacite","arrondissement_id","regime_id","source_id"];
 
     public function UploadFileSite(){
         return $this->hasMany(UploadFileSite::class);
