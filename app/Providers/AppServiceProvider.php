@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\View\Components\Navbar;
+use App\View\Components\Footer;
 use App\View\Components\App;
 use App\View\Components\Home;
 use App\View\Components\FormGroup;
@@ -27,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component(Navbar::class, 'navbar');
         Blade::component(App::class, 'app');
         Blade::component(Home::class, 'Home');
+        Blade::component(Footer::class, 'footer');
         Blade::component(FormGroup::class, 'form-group');
         Blade::component(Errors::class, 'errors');
         Blade::component(EspacePublic::class, 'espace-public');
