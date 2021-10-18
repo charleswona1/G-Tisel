@@ -4,7 +4,7 @@
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <!-- Left -->
     <div class="me-5 d-none d-lg-block">
-      <span>Get connected with us on social networks:</span>
+      <span>Abonnez vous sur nos resaux sociaux</span>
     </div>
     <!-- Left -->
 
@@ -17,16 +17,7 @@
         <i class="fab fa-twitter"></i>
       </a>
       <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
         <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
       </a>
     </div>
     <!-- Right -->
@@ -42,11 +33,10 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
+            <i class="fas fa-gem me-3"></i>G-tisel
           </h6>
           <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
+            Gestion des titres dans le secteur de l'energie
           </p>
         </div>
         <!-- Grid column -->
@@ -55,19 +45,19 @@
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Products
+            Liens publics
           </h6>
           <p>
-            <a href="#!" class="text-reset">Angular</a>
+            <a href="{{route('index')}}" class="text-reset">{{__('navbar home')}}</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">React</a>
+            <a href="{{route('sites')}}" class="text-reset">{{__('navbar site')}}</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vue</a>
+            <a href="http://arsel-cm.org" class="text-reset">Arsel</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Laravel</a>
+            <a href="https://minee.cm/" class="text-reset">Minee</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -76,20 +66,30 @@
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
+            {{__('navbar condition')}}
           </h6>
-          <p>
-            <a href="#!" class="text-reset">Pricing</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Settings</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Help</a>
-          </p>
+          @if (Auth::check())
+            <p>
+              <a href="{{route('public.text-juridique')}}" class="text-reset">{{__('navbar juridic')}}</a>
+            </p>
+            <p>
+              <a href="{{route('public.procedure')}}" class="text-reset">{{__('navbar procedure')}}</a>
+            </p>
+            <p>
+              <a href="{{route('public.regime')}}" class="text-reset">{{__('navbar regime')}}</a>
+            </p>
+          @else
+            <p>
+              <a href="{{route('text-juridique')}}" class="text-reset">{{__('navbar juridic')}}</a>
+            </p>
+            <p>
+              <a href="{{route('procedure')}}" class="text-reset">{{__('navbar procedure')}}</a>
+            </p>
+            <p>
+              <a href="{{route('regime')}}" class="text-reset">{{__('navbar regime')}}</a>
+            </p>
+          @endif
+         
         </div>
         <!-- Grid column -->
 
@@ -99,13 +99,13 @@
           <h6 class="text-uppercase fw-bold mb-4">
             Contact
           </h6>
-          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p><i class="fas fa-home me-3"></i> B.P 6064 Yaoundé</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            info@example.com
+            contact@gtisel.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          <p><i class="fas fa-phone me-3"></i> + (237) 222 21 10 12</p>
+          <p><i class="fas fa-print me-3"></i> + (237) 222 21 10 14</p>
         </div>
         <!-- Grid column -->
       </div>
@@ -117,7 +117,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    <a class="text-reset fw-bold" href="#">innoEngine</a>
   </div>
   <!-- Copyright -->
 </footer>

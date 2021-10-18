@@ -72,6 +72,8 @@
 
     "site filtre": "Filtres",
     "site all": "Tous",
+    "site zone": "Localisation",
+    "site activite": "Activité",
     "site region": "Région",
     "site departement": "Département",
     "site arrondissement": "Arrondissement",
@@ -86,5 +88,8 @@
     "site service": "Service traitant ",
     "site title-detail": "Detail du site :",
 
-    "demande": "Démander un titre"
+    "demande": "Démander un titre",
+
+    "loi 1": "Loi régissant le secteur de l’électricité au Cameroun"
+
 }

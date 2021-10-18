@@ -74,6 +74,8 @@
 
     "site filtre": "Filters",
     "site all": "All",
+    "site zone": "Localization",
+    "site activite": "Activity",
     "site region": "Region",
     "site departement": "Department",
     "site arrondissement": "Borough",
@@ -88,5 +90,7 @@
     "site service": "Referring department ",
     "site title-detail": "Site detail: :",
 
-    "demande": "Request a title"
+    "demande": "Request a title",
+
+    "loi 1": "Law governing the electricity sector in Cameroon"
 }
