@@ -114,7 +114,7 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
+                        {{-- <li class="list-group-item">
 
                             <div class="row">
                                 
@@ -207,6 +207,9 @@
                                 
                             </div>
 
+                        </li> --}}
+                        <li class="list-group-item">
+                            Aucun site disponible pour le moment
                         </li>
                     </ul>
                 </div>
