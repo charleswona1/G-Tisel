@@ -26,6 +26,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::prefix('{site}')->group(function(){
             Route::get('/show', 'SitesController@show')->name('show');
             Route::get('/demand', 'SitesController@demand')->name('demand');
+            Route::post('/demand', 'SitesController@storeDemandeTitre');
         });
         
     });

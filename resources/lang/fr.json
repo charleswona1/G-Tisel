@@ -86,5 +86,19 @@
     "site service": "Service traitant ",
     "site title-detail": "Detail du site :",
 
-    "demande": "Démander un titre"
+    "demande": "Démander un titre",
+    "demande title": "Formulair de démander de titre",
+
+    "demande steppe1": "Informations administrative",
+    "demande steppe2": "Informations technique",
+    "demande subtitle1": "Informations du demandeur",
+    "demande adresse": "Adresse professionnelle du demandeur",
+    "demande status": "Status des responsables",
+    "demande status1": "Statut 1",
+    "demande status2": "Statut 2",
+    "demande status3": "Statut 3",
+    "demande status4": "Statut 4",
+    "demande document": "Pieces jointes",
+    "demande document1": "Document justifiant votre capacité technique et votre expérience"
+
 }

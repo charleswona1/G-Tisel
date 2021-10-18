@@ -88,5 +88,17 @@
     "site service": "Referring department ",
     "site title-detail": "Site detail: :",
 
-    "demande": "Request a title"
+    "demande title": "Title application form",
+    "demande": "Request a title",
+    "demande steppe1": "Administrative information",
+    "demande steppe2": "Technical information",
+    "demande subtitle1": "Applicant information",
+    "demande adresse": "Professional address of the applicant",
+    "demande status": "Status of the managers",
+    "demande status1": "Statut 1",
+    "demande status2": "Statut 2",
+    "demande status3": "Statut 3",
+    "demande status4": "Statut 4",
+    "demande document": "Attachments",
+    "demande document1": "Document justifying your technical capacity and experience"
 }
