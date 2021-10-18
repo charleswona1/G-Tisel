@@ -109,11 +109,11 @@
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-header !font-weight-bold">
-                    <p class="title-normal"> {{__('site suivit')}} </p>
+                    <p class="title-normal"> {{__('site audiance')}} </p>
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
+                        {{-- <li class="list-group-item">
 
                             <div class="row">
                                 
@@ -206,6 +206,9 @@
                                 
                             </div>
 
+                        </li> --}}
+                        <li class="list-group-item">
+                            Aucun site disponible pour le moment
                         </li>
                     </ul>
                 </div>

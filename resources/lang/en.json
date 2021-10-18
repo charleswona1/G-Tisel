@@ -86,11 +86,24 @@
     "site title": "Recommended site(s) for you",
     "site subtitle": "Depending on your profile and search history.",
     "site suivit": "Your site requests",
+    "site audiance": "Most visited sites",
     "site postulant": "Applicants",
     "site service": "Referring department ",
     "site title-detail": "Site detail: :",
 
     "demande": "Request a title",
 
-    "loi 1": "Law governing the electricity sector in Cameroon"
+    "loi 1": "Law governing the electricity sector in Cameroon",
+    "demande title": "Title application form",
+    "demande steppe1": "Administrative information",
+    "demande steppe2": "Technical information",
+    "demande subtitle1": "Applicant information",
+    "demande adresse": "Professional address of the applicant",
+    "demande status": "Status of the managers",
+    "demande status1": "Statut 1",
+    "demande status2": "Statut 2",
+    "demande status3": "Statut 3",
+    "demande status4": "Statut 4",
+    "demande document": "Attachments",
+    "demande document1": "Document justifying your technical capacity and experience"
 }
