@@ -20,6 +20,10 @@ class SitesController extends Controller
         return view("public.site.show",compact("site"));
     }
 
+    public function mySite(){
+        return view("public.site.my-site");
+    }
+
     public function demand(Site $site){
         return view("public.site.demand",compact("site"));
     }
