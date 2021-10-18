@@ -119,13 +119,7 @@
                         {{__('navbar my-site')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is('public/documentation*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is('public/documentation*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.documentation')}}">
-                        <i class="fas fa-book fa-2x mb-lg-1 me-3 me-lg-0"></i>
-                        {{__('navbar condition')}}
-                    </a>
-                </li>
-
+                
                 <li class="nav-item dropdown mx-3 {{ Request::is('public/documentation*') ? 'link-Active' : '' }}">
                     <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <p class="mb-0 text-center d-none d-lg-block"><i class="fas fa-book fa-2x"></i></p>
