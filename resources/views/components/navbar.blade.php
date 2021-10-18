@@ -113,8 +113,8 @@
                         {{__('navbar site')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is('public/sites*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is('public/sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.my-sites')}}">
+                <li class="nav-item mx-3 {{ Request::is('public/my-sites*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('public/my-sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.my-sites')}}">
                         <i class="far fa-stream fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar my-site')}}
                     </a>
