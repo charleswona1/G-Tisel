@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
                     <h1 class="fw-bold ">
-                        Gestion des titres dans le secteur de l'energie
+                        Gestion des titres dans le secteur de l'électricité
                     </h1>
                     <h3 class="mt-2">
                         <small class="text-muted">Agence de regulation du secteur de l'electricité</small>
