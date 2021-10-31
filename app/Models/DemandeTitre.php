@@ -44,6 +44,13 @@ class DemandeTitre extends Model
         "code_postal4",
         "perimetre",
         "lieu_implementation",
+        "nom_eau",
+        "ouvrage_hydro",
+        "profil_long_eau",
+        "profil_en_travers",
+        "caracteristique_site",
+        "pays_origines",
+        "standart",
         "file1",
         "file2",
         "file3",
@@ -57,8 +64,13 @@ class DemandeTitre extends Model
         "file11",
         "file12",
         "file13",
-        "file14"
-        
+        "file14",
+        "file15",
+        "file16",
+        "file17",
+        "file18",
+        "file19",
+        "file20"
     ];
 
     public function activite(){
