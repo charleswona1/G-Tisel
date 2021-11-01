@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Session;
 class SitesController extends Controller
 {
     public function index(){
+        $sites = Site::all();
 
+        return view('admin.sites.index',compact('sites'));
     }
 
     public function create(){

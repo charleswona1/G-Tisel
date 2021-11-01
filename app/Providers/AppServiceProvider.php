@@ -12,6 +12,8 @@ use App\View\Components\Errors;
 use App\View\Components\EspacePublic;
 use App\View\Components\Admin;
 use App\View\Components\FlashBag;
+use App\View\Components\SidebarAdmin;
+use App\View\Components\HeaderAdmin;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
@@ -34,6 +36,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::component(EspacePublic::class, 'espace-public');
         Blade::component(Admin::class, 'admin');
         Blade::component(FlashBag::class, 'flash-bag');
+        Blade::component(SidebarAdmin::class, 'sidebar-admin');
+        Blade::component(HeaderAdmin::class, 'header-admin');
 
         Schema::defaultStringLength(191);
     }

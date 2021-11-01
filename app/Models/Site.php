@@ -16,7 +16,7 @@ class Site extends Model
     }
 
     public function SourceEnergie(){
-        return $this->belongsTo(SourceEnergie::class);
+        return $this->belongsTo(SourceEnergie::class,'sourcee_id');
     }
 
     public function Regime(){
