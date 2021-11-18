@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\EspacePublic\Sites;
-
 use App\Http\Controllers\Controller;
 use App\Models\Site;
 use Illuminate\Http\Request;
@@ -13,11 +12,14 @@ class SitesController extends Controller
 {
     public function index(){
         $sites = Site::all();
-        return view("public.site.index",compact('sites'));
+        $demandeTitres = DemandeTitre::all();
+        //var_dump($demandeTitres[0]->site->description);
+        return view("public.site.index",compact('sites', 'demandeTitres'));
     }
 
     public function show(Site $site){
-        return view("public.site.show",compact("site"));
+        $demandeTitres = DemandeTitre::all();
+        return view("public.site.show",compact("site", "demandeTitres"));
     }
 
     public function demand(Site $site){
@@ -58,50 +60,69 @@ class SitesController extends Controller
             'perimetre' => ['required'],
             'activite_id' => ['required'],
             'lieu_implementation' => ['required'],
-            'file1' => ['required'],
-            'file2' => ['required'],
-            'file3' => ['required'],
-            'file4' => ['required'],
-            'file5' => ['required'],
-            'file6' => ['required'],
-            'file7' => ['required'],
-            'file8' => ['required'],
-            'file9' => ['required'],
-            'file10' => ['required'],
-            'file11' => ['required'],
-            'file12' => ['required'],
-            'file13' => ['required'],
-            'file14' => ['required'],
+            'nom_eau' => [''],
+            'ouvrage_hydro' => [''],
+            'profil_long_eau' => [''],
+            'profil_en_travers' => [''],
+            'caracteristique_site' => [''],
+            'pays_origines' => [''],
+            'standart' => [''],
+            'file1' => [''],
+            'file2' => [''],
+            'file3' => [''],
+            'file4' => [''],
+            'file5' => [''],
+            'file6' => [''],
+            'file7' => [''],
+            'file8' => [''],
+            'file9' => [''],
+            'file10' => [''],
+            'file11' => [''],
+            'file12' => [''],
+            'file13' => [''],
+            'file14' => [''],
+            'file15' => [''],
+            'file16' => [''],
+            'file17' => [''],
+            'file18' => [''],
+            'file19' => [''],
+            'file20' => ['']
         ]);
 
-        $sites = Site::all();
-        sleep((3000/1000));
+    
+        /*sleep((3000/1000));
         Session::flash('success', "Demande envoyé avec success");
         $this::index();
 
-        return redirect()->route('public.site');
+        return redirect()->route('public.site');*/
 
-        /*$demandeTitre = new DemandeTitre();
+
+        $demandeTitre = new DemandeTitre();
         $demandeTitre->fill($demandeTitreValidate);
         $demandeTitre->site_id = $site->id;
         $demandeTitre->user_id = Auth::user()->id;
-        $demandeTitre.save();
+        $demandeTitre->status = 'Pending';
+        
+        /*for ($i=1; $i <= 20; $i++) { 
+            $fileData = $request->file('file'.$i);
+            if($fileData != null) {
+                $name = date('yyyy-mm-dd').$fileData->getClientOriginalExtension();
+                $path = $fileData->storeAs(
+                    'attachementDemandes',
+                    $name,
+                    'public'
+                );
+                $demandeTitre->file.$i = $path;
+            }
+            
+        }*/
+        $demandeTitre->save();
 
-        for ($i=1; $i <= 14; $i++) { 
-            $file = $request->file('file'.$i);
-            $name = date("Y/m/d").$file->getClientOriginalExtension();
-            $path = $fileData->storeAs(
-                'attachementDemandes',
-                $name,
-                'public'
-            );
-            $demandeTitre = new DemandeTitre();
-            $demandeTitre->file1 = $site->id;
-            $demandeTitre.save();  
-        }
        
         Session::flash('success', "Demande envoyé avec success");
 
-        return redirect()->route('pubic.site');*/
+        $demandeTitres = DemandeTitre::all();
+        $sites = Site::all();
+        return view("public.site.index",compact('sites', 'demandeTitres'));
     }
 }
