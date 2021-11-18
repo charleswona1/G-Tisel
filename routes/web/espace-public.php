@@ -36,7 +36,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
-Route::get('/documentation','DocumentsController@index')->name('documentation');
+Route::prefix('documentation')->group(function(){
+    Route::get('/text-juridique','DocumentsController@juridic')->name('text-juridique');
+    Route::get('/regime','DocumentsController@regime')->name('regime');
+    Route::get('/procedure','DocumentsController@procedure')->name('procedure');
+
+    Route::get('/download','DocumentsController@download')->name('download');
+});
 
 // Route::middleware(['auth'])->group(function () {
 //     Route::get('/', 'HomeController@index')->name('index');

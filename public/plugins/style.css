@@ -178,3 +178,7 @@ body {
 .dropdown-item::active {
     color: #FFF !important;
 }
+
+.pointer {
+    cursor: pointer;
+}

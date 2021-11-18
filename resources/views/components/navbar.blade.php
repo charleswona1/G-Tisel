@@ -107,23 +107,44 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
 
-                <li class="nav-item mx-3 {{ Request::is('public*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is('public*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.site')}}">
+                <li class="nav-item mx-3 {{ Request::is('public') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('public') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.site')}}">
                         <i class="fas fa-bolt fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar site')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is('public/sites*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is('public/sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.my-sites')}}">
+                <li class="nav-item mx-3 {{ Request::is('public/my-sites*') ? 'link-Active' : '' }}">
+                    <a class="nav-link {{ Request::is('public/my-sites*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.my-sites')}}">
                         <i class="far fa-stream fa-2x mb-lg-1 me-3 me-lg-0"></i>
                         {{__('navbar my-site')}}
                     </a>
                 </li>
-                <li class="nav-item mx-3 {{ Request::is('public/documentation*') ? 'link-Active' : '' }}">
-                    <a class="nav-link {{ Request::is('public/documentation*') ? 'active' : '' }} d-lg-flex flex-lg-column justify-content-center align-items-center" href="{{route('public.documentation')}}">
-                        <i class="fas fa-book fa-2x mb-lg-1 me-3 me-lg-0"></i>
+                
+                <li class="nav-item dropdown mx-3 {{ Request::is('public/documentation*') ? 'link-Active' : '' }}">
+                    <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <p class="mb-0 text-center d-none d-lg-block"><i class="fas fa-book fa-2x"></i></p>
+                        <i class="fas fa-book fa-2x d-lg-none me-3 me-lg-0"></i>
                         {{__('navbar condition')}}
                     </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item {{ Request::is('public/documentation/text-juridique*') ? 'active' : '' }}" href="{{route('public.text-juridique')}}">
+                                <i class="fas fa-gavel me-2"></i>  {{__('navbar juridic')}}
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item {{ Request::is('public/documentation/procedure*') ? 'active' : '' }}" href="{{route('public.procedure')}}">
+                                <i class="fas fa-tasks me-2"></i>  {{__('navbar procedure')}}
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item {{ Request::is('public/documentation/regime*') ? 'active' : '' }}" href="{{route('public.regime')}}">
+                                <i class="fas fa-file me-2"></i>  {{__('navbar regime')}}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 
                 <li class="nav-item dropdown mx-3">

@@ -74,6 +74,8 @@
 
     "site filtre": "Filters",
     "site all": "All",
+    "site zone": "Localization",
+    "site activite": "Activity",
     "site region": "Region",
     "site departement": "Department",
     "site arrondissement": "Borough",
@@ -84,12 +86,15 @@
     "site title": "Recommended site(s) for you",
     "site subtitle": "Depending on your profile and search history.",
     "site suivit": "Your site requests",
+    "site audiance": "Most visited sites",
     "site postulant": "Applicants",
     "site service": "Referring department ",
     "site title-detail": "Site detail: :",
 
-    "demande title": "Title application form",
     "demande": "Request a title",
+
+    "loi 1": "Law governing the electricity sector in Cameroon",
+    "demande title": "Title application form",
     "demande steppe1": "Administrative information",
     "demande steppe2": "Technical information",
     "demande steppe3": "Other information",

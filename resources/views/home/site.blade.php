@@ -9,14 +9,10 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item title-item-filtre">{{__('site all')}}</li>
-
-                        <li class="list-group-item title-item-filtre">{{__('site regime')}}</li>
-                        
-                        <li class="list-group-item title-item-filtre">{{__('site source energie')}}</li>
-                        <li class="list-group-item title-item-filtre">{{__('site type exploitation')}}</li>
-                        <li class="list-group-item title-item-filtre">{{__('site region')}}</li>
-                        <li class="list-group-item title-item-filtre">{{__('site departement')}}</li>
-                        <li class="list-group-item title-item-filtre">{{__('site arrondissement')}}</li>
+                        <li class="list-group-item title-item-filtre pointer" data-bs-toggle="modal" data-bs-target="#regime">{{__('site regime')}}</li>
+                        <li class="list-group-item title-item-filtre pointer" data-bs-toggle="modal" data-bs-target="#Source">{{__('site source energie')}}</li>
+                        <li class="list-group-item title-item-filtre pointer" data-bs-toggle="modal" data-bs-target="#localisation">{{__('site zone')}}</li>
+                        <li class="list-group-item title-item-filtre">{{__('site activite')}}</li>
                     </ul>
                 </div>
             </div>
@@ -116,7 +112,7 @@
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-header !font-weight-bold">
-                    <p class="title-normal"> {{__('site suivit')}} </p>
+                    <p class="title-normal"> {{__('site audiance')}} </p>
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
@@ -178,4 +174,136 @@
         </div>
     </div>
 
+    <div class="modal fade" id="regime" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex justify-content-between">
+                    <h6>Filtre sur les regimes</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="p-2">
+                    @forelse ($regimes as $regime)
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="{{$regime->id}}" name="regime_id" id="regime_id">
+                            <label class="form-check-label" for="regime_id">
+                                {{$regime->name}}
+                            </label>
+                        </div>
+                    @empty
+                        <p class="text-center">Aucun regime disponible</p>
+                    @endforelse
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" aria-label="find">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Source" tabindex="-1" aria-labelledby="source d'energie" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex justify-content-between">
+                    <h6>Filtre sur les Sources d'energie</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="p-2">
+                    @forelse ($sources as $source)
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="{{$source->id}}" name="source_id" id="source_id">
+                            <label class="form-check-label" for="source_id">
+                                {{$source->name}}
+                            </label>
+                        </div>
+                    @empty
+                        <p class="text-center">Aucune source d'energie disponible</p>
+                    @endforelse
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" aria-label="find">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="localisation" tabindex="-1" aria-labelledby="localisation du site" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex justify-content-between">
+                    <h6>Filtre sur les Sources d'energie</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="p-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
+                                <select name="regime_id" class="form-select"  >
+                                    <option selected>Selectinner la region</option>
+                                    @foreach ($regions as $region)
+                                        <option value="{{$region->id}}">{{$region->name}}</option>
+                                    @endforeach
+                                  </select>
+                            </x-form-group>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
+                                <select name="regime_id" class="form-select"  >
+                                    <option selected>Selectinner le departement</option>
+                                    @foreach ($departements as $departement)
+                                        <option value="{{$departement->id}}">{{$departement->name}}</option>
+                                    @endforeach
+                                  </select>
+                            </x-form-group>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
+                                <select name="regime_id" class="form-select"  >
+                                    <option selected>Selectinner l'arrondissement</option>
+                                    @foreach ($arrondissements as $arrondissement)
+                                        <option value="{{$arrondissement->id}}">{{$arrondissement->name}}</option>
+                                    @endforeach
+                                  </select>
+                            </x-form-group>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" aria-label="find">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
 </x-home>

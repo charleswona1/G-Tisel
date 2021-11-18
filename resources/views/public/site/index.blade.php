@@ -153,7 +153,7 @@
                                         <div class="icon-grey-ligth" style="margin-right: 5px;"><i class="far fa-file-signature"></i></div>
                                         <div>
                                             <p class="subtitle-labe-service-site mb-0">{{__('site service')}}</p> 
-                                            <p class="subtitle-detail-site mb-0">{{$demandeTitre->lieu_implementation ?? '---' }}</p> 
+                                            <p class="subtitle-detail-site mb-0">{{'---' }}</p> 
                                         </div>
                                     </div>
 
