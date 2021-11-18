@@ -1,7 +1,7 @@
-<x-admin title="provisoir page to add site">
+<x-admin title="Update site">
     <div class="card bg-white p-4 mb-3">
         <div class="row justify-content-between">
-            <h5><i class="fas fa-pencil-alt me-2 ms-4"></i> Créer un site</h5>
+            <h5><i class="fas fa-pencil-alt me-2 ms-4"></i> Modifier un site</h5>
         </div>
         
     </div>
@@ -11,38 +11,38 @@
             <div class="row">
                 <div class="col-lg-6">
                     <x-form-group label="Nom du site" class="mb-3 ">
-                        <input class="form-control" type="text" placeholder="Entrez le nom du site" name="name" />
+                        <input class="form-control" value="{{$site->name}}" type="text" placeholder="Entrez le nom du site" name="name" />
                     </x-form-group>
                 </div>
 
                 <div class="col-lg-6">
                     <x-form-group label="Localite du site" class="mb-3 ">
-                        <input class="form-control" type="text" placeholder="Entrez le nom du site" name="localite" />
+                        <input class="form-control" value="{{$site->localite}}" type="text" placeholder="Entrez le nom du site" name="localite" />
                     </x-form-group>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
                     <x-form-group label="Latitude" class="mb-3 ">
-                        <input class="form-control" type="number" step="0.001" placeholder="Entrez le nom du site" name="latitude" />
+                        <input class="form-control" value="{{$site->latitude}}" type="number" step="0.001" placeholder="Entrez le nom du site" name="latitude" />
                     </x-form-group>
                 </div>
 
                 <div class="col-lg-4">
                     <x-form-group label="Longitude" class="mb-3 ">
-                        <input class="form-control" type="number" step="0.001" placeholder="Entrez le nom du site" name="longitude" />
+                        <input class="form-control" value="{{$site->longitude}}" type="number" step="0.001" placeholder="Entrez le nom du site" name="longitude" />
                     </x-form-group>
                 </div>
 
                 <div class="col-lg-4">
                     <x-form-group label="Capacité du site" class="mb-3 ">
-                        <input class="form-control" type="number" step="0.001" placeholder="Entrez le nom du site" name="capacite" />
+                        <input class="form-control" value="{{$site->capacite}}" type="number" step="0.001" placeholder="Entrez le nom du site" name="capacite" />
                     </x-form-group>
                 </div>
             </div>
 
             <x-form-group label="Description du site" class="mb-3 ">
-                <textarea name="description" class="form-control" cols="20" rows="5" placeholder="Entre une description"></textarea>
+                <textarea name="description" class="form-control" cols="20" rows="5" placeholder="Entre une description">{{$site->description}}</textarea>
             </x-form-group>
 
             <div class="row">
@@ -73,7 +73,7 @@
                         <select id="arrond" name="arrondissement_id" class="form-select" >
                             <option selected>Selectinner l'arrondissement</option>
                             @foreach ($arrondissements as $arrondissement)
-                            <option value="{{$arrondissement->id}}">{{$arrondissement->name}}</option>
+                            <option value="{{$arrondissement->id}}" @if($arrondissement->id == $site->arrondissement_id) selected  @endif >{{$arrondissement->name}}</option>
                             @endforeach
                           </select>
                     </x-form-group>
@@ -86,7 +86,7 @@
                         <select name="source_id" class="form-select">
                             <option selected>Selectinner la source d'energie</option>
                             @foreach ($sourceEnergies as $source)
-                            <option value="{{$source->id}}">{{$source->name}}</option>
+                            <option value="{{$source->id}}" @if($source->id == $site->source_id) selected  @endif >{{$source->name}}</option>
                             @endforeach
                           </select>
                     </x-form-group>
@@ -96,8 +96,8 @@
                     <x-form-group label="Selectioner le regime" class="mb-3 ">
                         <select name="regime_id" class="form-select"  >
                             <option selected>Selectinner le regime</option>
-                            @foreach ($regimes as $regimes)
-                            <option value="{{$regimes->id}}">{{$regimes->name}}</option>
+                            @foreach ($regimes as $regime)
+                            <option value="{{$regime->id}}" @if($regime->id == $site->regime_id) selected  @endif >{{$regime->name}}</option>
                             @endforeach
                           </select>
                     </x-form-group>
@@ -115,7 +115,7 @@
                 <div class="col-lg-3">
                     <p class="mb-1">Publiez le site</p>
                     <x-form-group  class="mb-3  form-check form-switch">
-                        <input class="form-check-input" name="publication" type="checkbox" id="flexSwitchCheckChecked" >
+                        <input class="form-check-input" name="publication" value="{{$site->publication}}" type="checkbox" id="flexSwitchCheckChecked" >
                         <label class="form-check-label" for="flexSwitchCheckChecked">Publié</label>
                     </x-form-group>
                 </div>
@@ -123,7 +123,7 @@
             
             <x-errors />
     
-            <button class="btn btn-primary" type="submit">Enregistrer </button>
+            <button class="btn btn-primary" type="submit">Modifier </button>
             
         {{ html()->form()->close() }}
     </div>
@@ -137,6 +137,7 @@
            jQuery(document).ready(function($) {
                 $('#region').on('change',function(e){
                     $('#depart').empty();
+                    $('#arrond').empty();
                     let select ="";
             
                     $.ajax({
@@ -152,6 +153,7 @@
                             });
 
                             $('#depart').append(select);
+                            $('#arrond').append("<option  selected>Selectionner un arrondissement </option>");
                         },
                         error: function(response){
                         

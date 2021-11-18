@@ -1,4 +1,5 @@
-@if(Session::has('success'))
+@if (!Request::is('admin*'))
+    @if(Session::has('success'))
     <div class="toast position-absolute top-0 end-0 mt-5 me-1" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header text-white bg-success">
             <i class="fas fa-shield-check "></i>
@@ -10,9 +11,9 @@
             {!! Session::get('success') !!}
         </div>
     </div>
-@endif
+    @endif
 
-@if(Session::has('error'))
+    @if(Session::has('error'))
     <div class="toast position-absolute top-0 end-0 mt-5 me-1" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header text-white bg-danger">
             <i class="far fa-bug"></i>
@@ -24,9 +25,9 @@
             {!! Session::get('error') !!}
         </div>
     </div>
-@endif
+    @endif
 
-@if(Session::has('warning'))
+    @if(Session::has('warning'))
     <div class="toast position-absolute top-0 end-0 mt-5 me-1" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header text-white bg-warning">
             <i class="far fa-exclamation-circle "></i>
@@ -38,9 +39,9 @@
             {!! Session::get('warning') !!}
         </div>
     </div>
-@endif
+    @endif
 
-@if(Session::has('info'))
+    @if(Session::has('info'))
     <div class="toast position-absolute top-0 end-0 mt-5 me-1" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header text-white bg-info">
             <i class="far fa-info-circle"></i>
@@ -52,7 +53,45 @@
             {!! Session::get('info') !!}
         </div>
     </div>
+    @endif
+@else
+    @if (Session::has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {!! Session::get('success') !!}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+    @if (Session::has('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {!! Session::get('error') !!}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+    @if (Session::has('warning'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {!! Session::get('warning') !!}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+    @if (Session::has('info'))
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        {!! Session::get('info') !!}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
 @endif
+    
+
+
+
 
 <style>
     .mt-5{

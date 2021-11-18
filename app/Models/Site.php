@@ -16,7 +16,7 @@ class Site extends Model
     }
 
     public function SourceEnergie(){
-        return $this->belongsTo(SourceEnergie::class,'sourcee_id');
+        return $this->belongsTo(SourceEnergie::class,'source_id');
     }
 
     public function Regime(){
@@ -25,5 +25,9 @@ class Site extends Model
 
     public function Arrondissement(){
         return $this->belongsTo(Arrondissement::class);
+    }
+
+    public function NbPublieSite(){
+        return Site::where($this->publication,"on")->count();
     }
 }

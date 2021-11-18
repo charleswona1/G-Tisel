@@ -42,11 +42,10 @@
             }
         </style>
     @else
-        <link rel="stylesheet" href="{{asset('coreui/node_modules/simplebar/dist/simplebar.css')}}">
-        <link rel="stylesheet" href="{{asset('coreui/dist/css/vendors/simplebar.css')}}">
         <link href="{{asset('coreui/dist/css/style.css')}}" rel="stylesheet">
         <!-- We use those styles to show code examples, you should remove them in your application.-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
+        <link rel="canonical" href="https://coreui.io/docs/4.0/components/accordion/">
         <link href="{{asset('coreui/dist/css/examples.css')}}" rel="stylesheet">
          <style>
              .btn-primary {
@@ -182,19 +181,13 @@
       // Bootstrap ID
       gtag('config', 'UA-118965717-5');
     </script>
-    <link href="coreui/node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css" rel="stylesheet">
-    <script src="coreui/node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
-    <script src="coreui/node_modules/simplebar/dist/simplebar.min.js"></script>
-    <!-- We use those scripts to show code examples, you should remove them in your application.-->
+    <script src="{{asset('coreui/dist/js/coreui.bundle.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
     <!-- Plugins and scripts required by this view-->
-    <script src="coreui/node_modules/chart.js/dist/chart.min.js"></script>
-    <script src="coreui/node_modules/@coreui/chartjs/dist/js/coreui-chartjs.js"></script>
-    <script src="coreui/node_modules/@coreui/utils/dist/coreui-utils.js"></script>
-    <script src="coreui/src/js/main.js"></script>
+    <script src="{{asset('coreui/src/js/main.js')}}"></script>
     @endif
 
     

@@ -18,13 +18,19 @@
           <ul class="nav-group-items">
             <li class="nav-item">
                 <a class="nav-link"href="{{route('admin.index')}}"> 
-                    Listes de sites (1)
+                    @php
+                        $nbSite = App\Models\Site::count();
+                    @endphp
+                    Listes de sites ({{$nbSite}})
                 </a>
-                <a class="nav-link" href="#"> 
-                    Sites Publiés (0)
+                <a class="nav-link" href="{{route('admin.publie')}}"> 
+                    @php
+                        $nbPublie = App\Models\Site::where("publication","on")->count();
+                    @endphp
+                    Sites Publiés ({{$nbPublie}})
                 </a>
-                <a class="nav-link" href="#"> 
-                    Sites non Publiés (0)
+                <a class="nav-link" href="{{route('admin.non-publie')}}"> 
+                    Sites non Publiés ({{$nbSite - $nbPublie}})
                 </a>
             </li>
           </ul>

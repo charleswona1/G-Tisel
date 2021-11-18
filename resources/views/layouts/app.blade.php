@@ -25,9 +25,7 @@
         <div class="wrapper d-flex flex-column min-vh-100 bg-light">
             <x-header-admin></x-header-admin>
             <div class="body flex-grow-1 px-3">
-                <div class="container-lg">
-                    {{$slot}}
-                </div>
+                {{$slot}}
             </div>
         </div>
     @endif  

@@ -1,7 +1,7 @@
-<x-admin title="Liste des sites">
+<x-admin title="Liste des sites non publiés">
     <div class="card bg-white p-4 mb-3">
         <div class="d-flex justify-content-between">
-            <h3>Listes des sites</h3>
+            <h3>Listes des sites non publiés</h3>
 
             <a href="{{route('admin.create')}}" class="btn btn-primary btn-sm">Ajouter un site</a>
         </div>
@@ -42,9 +42,9 @@
                         </td>
                     </tr>
                 @empty
-                <tr>
-                    <th colspan="7" class="text-center">Aucune données disponibles</th>
-                </tr>
+                    <tr>
+                        <th colspan="7" class="text-center">Aucune données disponibles</th>
+                    </tr>
                 @endforelse
               
             </tbody>
