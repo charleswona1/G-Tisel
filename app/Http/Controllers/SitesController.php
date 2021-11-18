@@ -9,12 +9,15 @@ use App\Models\Regime;
 use App\Models\Region;
 use Illuminate\Http\Request;
 use App\Models\Site;
+use App\Models\DemandeTitre;
+
 use App\Models\SourceEnergie;
 
 class SitesController extends Controller
 {
     public function index(){
         $sites = Site::all();
+        $demandeTitres = DemandeTitre::all();
         $regimes = Regime::all();
         $sources = SourceEnergie::all();
         $regions = Region::all();
@@ -23,7 +26,7 @@ class SitesController extends Controller
         $activites = Activite::all();
 
         \Debugbar::info($sites);
-        return view("home.site",compact('sites','regimes','sources','regions','arrondissements','departements','activites'));
+        return view("home.site",compact('sites','regimes','sources','regions','arrondissements','departements','activites', 'demandeTitres'));
     }
 
     public function show( Site $site){

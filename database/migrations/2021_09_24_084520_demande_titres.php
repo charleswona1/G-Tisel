@@ -50,6 +50,13 @@ class DemandeTitres extends Migration
             $table->string('courriel4')->nullable();
             $table->string('fax4')->nullable();
             $table->string('code_postal4')->nullable();
+            $table->string('nom_eau')->nullable();
+            $table->string('ouvrage_hydro')->nullable();
+            $table->string('profil_long_eau')->nullable();
+            $table->string('profil_en_travers')->nullable();
+            $table->string('caracteristique_site')->nullable();
+            $table->string('pays_origines')->nullable();
+            $table->string('standart')->nullable();
             $table->string('file1')->nullable();
             $table->string('file2')->nullable();
             $table->string('file3')->nullable();
@@ -64,6 +71,12 @@ class DemandeTitres extends Migration
             $table->string('file12')->nullable();
             $table->string('file13')->nullable();
             $table->string('file14')->nullable();
+            $table->string('file15')->nullable();
+            $table->string('file16')->nullable();
+            $table->string('file17')->nullable();
+            $table->string('file18')->nullable();
+            $table->string('file19')->nullable();
+            $table->string('file20')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('site_id')->references('id')->on('sites');
             $table->foreign('activite_id')->references('id')->on('activites');

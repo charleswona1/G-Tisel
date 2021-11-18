@@ -22,6 +22,7 @@
                 <div class="card-header pt-4 pb-0">
                     <h1 class="title mb-0" >{{__('site title')}}</h1>
                     <p class="subtitle mb-1">{{__('site subtitle')}}</p>
+                    
                 </div>
                 <div class="card-body pt-0">
                     <ul class="list-group list-group-flush">
@@ -47,11 +48,13 @@
                                         <div class="d-flex">
                                             <div class="icon-grey-ligth" style="margin-right: 10px;"><i class="far fa-briefcase"></i></div>
                                             <p class="subtitle-calification-site" > 
-                                                @forelse ($site->Regime->Activites as $activite)
+                                               <!--  @forelse ($site->Regime->Activites as $activite)
                                                     {{$activite->libelle_activite}}
                                                 @empty
                                                     Aucune activité
-                                                @endforelse    
+                                                @endforelse -->
+                                                {{$site->Regime->Activites[0]->libelle_activite}}
+                                                
                                             </p>
                                         
                                         </div>
@@ -113,7 +116,8 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        {{-- <li class="list-group-item">
+                        @forelse ($demandeTitres as $demandeTitre)
+                        <li class="list-group-item">
 
                             <div class="row">
                                 
@@ -160,56 +164,10 @@
                                 </div>
 
                         </li>
-                        <li class="list-group-item">
-
-                            <div class="row">
-                            
-                                <div class="col-3 justify-content-center">
-                                    <span class="border border-light">
-                                        <img src="{{asset('assets/img/chutte.jpg')}}" style="height: 40px;" alt="item1" class="rounded">
-                                    </span>
-                                </div>
-
-                                <div class="col-7">
-                                    <p class="title-site"> Station eolienne de yoko (40 000 kWatt) </p>
-                                
-                                    <div class="d-flex">
-                                        <div class="icon-grey-ligth" style="margin-right: 10px;"><i class="far fa-briefcase"></i></div>
-                                        <p class="subtitle-calification-site" > Production</p>
-                                    
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="icon-grey-ligth" style="margin-right: 10px;"><i class="far fa-map-marker"></i></div>
-                                        
-                                        <p class="subtitle-localite-site" > Mbam ekim, Ntui </p>
-                                    </div>
-                                </div>
-
-                                <div class="col-2 d-flex justify-content-end icon-grey-dark">
-                                    <i class="fas fa-ellipsis-h mb-lg-1 me-3 me-lg-0"></i>
-                                </div>    
-                            </div>
-
-                            <div class="d-flex justify-content-between mt-1">
-                                <div class="d-flex" > 
-                                    <div class="icon-grey-ligth" style="margin-right: 5px;"><i class="far fa-file-signature"></i></div>
-                                    <div>
-                                        <p class="subtitle-labe-service-site mb-0">{{__('site service')}}</p> 
-                                        <p class="subtitle-detail-site mb-0">---</p> 
-                                    </div>
-                                </div>
-
-                                <div class="subtitle-detail-site d-flex" > 
-                                    <div class="statusIndex rounded-circle" style="background-color: #49c151;"></div>
-                                    <p class="subtitle-detail-site mb-0">Attribué</p> 
-                                </div>
-                                
-                            </div>
-
-                        </li> --}}
-                        <li class="list-group-item">
-                            Aucun site disponible pour le moment
-                        </li>
+                        @empty
+                            <h5>Vous n'avez aucune demande de site</h5>
+                        @endforelse
+                
                     </ul>
                 </div>
             </div>
