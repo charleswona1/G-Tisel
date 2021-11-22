@@ -56,16 +56,19 @@
                     
                     </div>
 
-                    <div class="d-flex px-3 pt-2">
-                        <div class="icon-grey-ligth" style="margin-right: 10px;"><i class="far fa-briefcase"></i></div>
-                        <p class="subtitle-calification-site" > 
+                    <div class="px-3 pt-2">
+                        <div class="d-flex">
+                            <div class="icon-grey-ligth" style="margin-right: 10px;"><i class="far fa-briefcase"></i></div>
+                            <p class="subtitle-calification-site" > Activités proposées</p>
+                        </div>
+                
+                        <ul class="list-group list-group-flush ps-3">
                             @forelse ($site->Regime->Activites as $activite)
-                                {{$activite->libelle_activite}}
+                                <li class="list-group-item">{{$activite->libelle_activite}}</li>
                             @empty
-                                Aucune activité
-                            @endforelse 
-                        </p>
-                    
+                                <li class="list-group-item">Aucune activité disponible</li>
+                            @endforelse
+                        </ul>
                     </div>
 
                     <div class="d-flex px-3 pt-2">

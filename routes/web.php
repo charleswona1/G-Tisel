@@ -26,6 +26,7 @@ Route::get('local/{locale}','SetLanguageController@switchLocale')->name('locale.
 Route::view('/', 'home.index')->name('index');
 Route::get('/sites', 'SitesController@index')->name('sites');
 Route::get('/sites/{site}/show', 'SitesController@show')->name('show');
+Route::get('/search', 'SitesController@search')->name('search');
 
 Route::view('public/auth/disabled','auth.verification_success')->name('auth.success');
 

@@ -8,7 +8,7 @@
     </div>
 
     <x-flash-bag></x-flash-bag>
-    <div class="card bg-white p-4">
+    <div class="card bg-white p-4 table-responsive">
         <table class="table table-striped">
             <thead>
               <tr>

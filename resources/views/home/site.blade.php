@@ -8,11 +8,38 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item title-item-filtre">{{__('site all')}}</li>
-                        <li class="list-group-item title-item-filtre pointer" data-bs-toggle="modal" data-bs-target="#regime">{{__('site regime')}}</li>
-                        <li class="list-group-item title-item-filtre pointer" data-bs-toggle="modal" data-bs-target="#Source">{{__('site source energie')}}</li>
-                        <li class="list-group-item title-item-filtre pointer" data-bs-toggle="modal" data-bs-target="#localisation">{{__('site zone')}}</li>
-                        <li class="list-group-item title-item-filtre">{{__('site activite')}}</li>
+                        <li class="list-group-item title-item-filtre pointer" id="reset_filter">{{__('site all')}}</li>
+                        <li class="list-group-item title-item-filtre pointer" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#regime">
+                                {{__('site regime')}}
+                                @if ($optRegime)
+                                    <br>
+                                    <i class="far fa-check"></i>
+                                    <small style="font-size: 10px">{{$optRegime->name}}</small>
+                                @endif
+                        </li>
+                        <li class="list-group-item title-item-filtre pointer" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#Source">
+                                {{__('site source energie')}}
+                                @if ($optSource)
+                                    <br>
+                                    <i class="far fa-check"></i>
+                                    <small style="font-size: 10px">{{$optSource->name}}</small>
+                                @endif
+                        </li>
+                        <li class="list-group-item title-item-filtre pointer" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#localisation">
+                                {{__('site zone')}}
+                                @if ($optArrond)
+                                    <br>
+                                    <i class="far fa-check"></i>
+                                    <small style="font-size: 10px">{{$optArrond->name}}</small>
+                                @endif
+                        </li>
+                        {{-- <li class="list-group-item title-item-filtre">{{__('site activite')}}</li> --}}
                     </ul>
                 </div>
             </div>
@@ -51,7 +78,7 @@
                                                 @empty
                                                     Aucune activité
                                                 @endforelse -->
-                                                {{$site->Regime->Activites[0]->libelle_activite}}
+                                                {{-- {{$site->Regime->Activites[0]->libelle_activite}} --}}
                                                 
                                             </p>
                                         
@@ -199,7 +226,7 @@
                         <i class="fas fa-times"></i>
                     </button>
                     
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" aria-label="find">
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" id="optregime" aria-label="find">
                         <i class="fas fa-check"></i>
                     </button>
                 </div>
@@ -235,7 +262,7 @@
                         <i class="fas fa-times"></i>
                     </button>
                     
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" aria-label="find">
+                    <button type="button" class="btn btn-sm btn-primary" id="optsource" data-bs-dismiss="modal" aria-label="find">
                         <i class="fas fa-check"></i>
                     </button>
                 </div>
@@ -250,7 +277,7 @@
           <div class="modal-content">
             <div class="modal-body">
                 <div class="d-flex justify-content-between">
-                    <h6>Filtre sur les Sources d'energie</h6>
+                    <h6>Filtre sur la localistion</h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
@@ -258,7 +285,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
-                                <select name="regime_id" class="form-select"  >
+                                <select id="region"  class="form-select"  >
                                     <option selected>Selectinner la region</option>
                                     @foreach ($regions as $region)
                                         <option value="{{$region->id}}">{{$region->name}}</option>
@@ -269,7 +296,7 @@
 
                         <div class="col-lg-4">
                             <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
-                                <select name="regime_id" class="form-select"  >
+                                <select id="depart" class="form-select"  >
                                     <option selected>Selectinner le departement</option>
                                     @foreach ($departements as $departement)
                                         <option value="{{$departement->id}}">{{$departement->name}}</option>
@@ -280,7 +307,7 @@
 
                         <div class="col-lg-4">
                             <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
-                                <select name="regime_id" class="form-select"  >
+                                <select id="arrond"  class="form-select"  >
                                     <option selected>Selectinner l'arrondissement</option>
                                     @foreach ($arrondissements as $arrondissement)
                                         <option value="{{$arrondissement->id}}">{{$arrondissement->name}}</option>
@@ -297,7 +324,7 @@
                         <i class="fas fa-times"></i>
                     </button>
                     
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" aria-label="find">
+                    <button type="button" class="btn btn-sm btn-primary" id="optarrond" data-bs-dismiss="modal" aria-label="find">
                         <i class="fas fa-check"></i>
                     </button>
                 </div>
@@ -305,4 +332,119 @@
           </div>
         </div>
     </div>
+    <script>
+        function filterRgime(requestUrl,id) {
+            if (id === "") {
+
+            } else {
+                requestUrl += ("?regime=" + id)
+                window.location = requestUrl;
+            }
+        }
+
+        function filterSource(requestUrl,id) {
+            if (id === "") {
+
+            } else {
+                requestUrl += ("?source=" + id)
+                window.location = requestUrl;
+            }
+        }
+
+        function filterArrondissement(requestUrl,id) {
+            if (id === "") {
+
+            } else {
+                requestUrl += ("?arrond=" + id)
+                window.location = requestUrl;
+            }
+        }
+    </script>
+    @push('javascripts')
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+           jQuery(document).ready(function($) {
+                $('#region').on('change',function(e){
+                    $('#depart').empty();
+                    let select ="";
+            
+                    $.ajax({
+                        url: "{{route('search')}}",
+                        type: "GET",
+                        data:{region:e.target.value},
+
+                        success:function(response){
+                            select +="<option  selected>Selectionner le departement</option>"
+                            $.each(response, function(key,elt){
+                                console.log(elt);
+                                select += "<option value="+elt.id+">"+elt.name+"</option>"
+                            });
+
+                            $('#depart').append(select);
+                        },
+                        error: function(response){
+                        
+                        }
+                    });
+                   
+                });
+
+                $('#depart').on('change',function(e){
+                    
+                    $('#arrond').empty();
+                    let select ="";
+            
+                    $.ajax({
+                        url: "{{route('search')}}",
+                        type: "GET",
+                        data:{depart:e.target.value},
+
+                        success:function(response){
+                            select +="<option  selected>Selectionner un arrondissement </option>"
+                            $.each(response, function(key,elt){
+                                console.log(elt);
+                                select += "<option value="+elt.id+">"+elt.name+"</option>"
+                            });
+
+                            $('#arrond').append(select);
+                        },
+                        error: function(response){
+                        
+                        }
+                    });
+                });
+
+                function getdata(data,route) {
+                    $.ajax({
+                        url: route,
+                        type: "GET",
+                        data:data,
+
+                        success:function(response){
+                            return response;
+                        },
+                        error: function(response){
+                        
+                        }
+                    });
+                }
+
+                $('#optregime').on('click',function () {
+                    filterRgime('{{route("sites")}}',$('#regime_id').val())
+                });
+
+                $('#optsource').on('click',function () {
+                    filterSource('{{route("sites")}}',$('#source_id').val())
+                });
+
+                $('#optarrond').on('click',function () {
+                    filterArrondissement('{{route("sites")}}',$('#arrond').val())
+                });
+                
+                $('#reset_filter').on('click',function () {
+                    window.location = '{{route("sites")}}';
+                })
+            });
+        </script>
+    @endpush
 </x-home>

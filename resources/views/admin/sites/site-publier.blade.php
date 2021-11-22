@@ -9,7 +9,7 @@
 
     <x-flash-bag></x-flash-bag>
     <div class="card bg-white p-4">
-        <table class="table table-striped">
+        <table class="table table-striped table-responsive">
             <thead>
               <tr>
                 <th scope="col">#</th>
