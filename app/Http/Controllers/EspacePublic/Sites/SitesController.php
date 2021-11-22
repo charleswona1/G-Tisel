@@ -17,6 +17,26 @@ class SitesController extends Controller
         return view("public.site.index",compact('sites', 'demandeTitres'));
     }
 
+    public function getSiteByRegime($regime_id) {
+        $sites = Site::where('regime_id', $regime_id);
+        $demandeTitres = DemandeTitre::all();
+        return view("public.site.index",compact('sites', 'demandeTitres'));
+    }
+
+    public function getSiteByLocality($arrondissement_id, $departement_id, $region_id) {
+        $sites = Site::where('arrondissement_id', $arrondissement_id)
+        ->orWhere('arrondissement.departement_id', $departement_id)
+        ->orWhere('departement.region_id', $region_id);
+        $demandeTitres = DemandeTitre::all();
+        return view("public.site.index",compact('sites', 'demandeTitres'));
+    }
+
+    public function getSiteByActivity($activy_id) {
+        $sites = Site::where('source_id', $source_id);
+        $demandeTitres = DemandeTitre::all();
+        return view("public.site.index",compact('sites', 'demandeTitres'));
+    }
+
     public function show(Site $site){
         $demandeTitres = DemandeTitre::all();
         return view("public.site.show",compact("site", "demandeTitres"));
@@ -110,7 +130,7 @@ class SitesController extends Controller
         /*for ($i=1; $i <= 20; $i++) { 
             $fileData = $request->file('file'.$i);
             if($fileData != null) {
-                $name = date('yyyy-mm-dd').$fileData->getClientOriginalExtension();
+                $name = date('yyyy-mm-dd HH:mm:ss').$fileData->getClientOriginalExtension();
                 $path = $fileData->storeAs(
                     'attachementDemandes',
                     $name,

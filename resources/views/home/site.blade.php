@@ -32,10 +32,8 @@
                                 <div class="row item-site">
                                     <div class="col-2 justify-content-center">
                                         <span class="border border-light">
-                                            @php
-                                                \Debugbar::info($site->UploadFileSite[0]->url)
-                                            @endphp
-                                            <img src="{{asset("storage/".$site->UploadFileSite[0]->url)}}" style="height: 40px;" alt="item1" class="rounded">
+                                        
+                                            <img src="{{asset("storage/".$sites[0]->UploadFileSite[0]->url)}}" style="height: 40px;" alt="item1" class="rounded">    
                                         </span>
                                     </div>
 
@@ -123,22 +121,22 @@
                                 
                                 <div class="col-3 justify-content-center">
                                     <span class="border border-light">
-                                        <img src="{{asset('assets/img/chutte.jpg')}}" style="height: 40px;" alt="item1" class="rounded">
+                                        <img src="{{ asset('assets/img/chutte.jpg')}}" style="height: 40px;" alt="item1" class="rounded">
                                     </span>
                                 </div>
 
                                 <div class="col-7">
-                                    <p class="title-site" >Barrage hydroélectrique de Foumbot </p>
+                                    <p class="title-site" >{{$demandeTitre->site->name}}</p>
                                 
                                     <div class="d-flex">
                                         <div class="icon-grey-ligth" style="margin-right: 10px;"><i class="far fa-briefcase"></i></div>
-                                        <p class="subtitle-calification-site" > Production</p>
+                                        <p class="subtitle-calification-site" > {{$demandeTitre->site->Regime->Activites[0]->libelle_activite}}</p>
                                     
                                     </div>
                                     <div class="d-flex">
                                         <div class="icon-grey-ligth" style="margin-right: 10px;"><i class="far fa-map-marker"></i></div>
                                         
-                                        <p class="subtitle-localite-site" > Noun, Foumbot </p>
+                                        <p class="subtitle-localite-site" > {{$demandeTitre->site->Arrondissement->name}}, {{$demandeTitre->site->localite}} </p>
                                     </div>
                                 </div>
 
@@ -152,13 +150,13 @@
                                         <div class="icon-grey-ligth" style="margin-right: 5px;"><i class="far fa-file-signature"></i></div>
                                         <div>
                                             <p class="subtitle-labe-service-site mb-0">{{__('site service')}}</p> 
-                                            <p class="subtitle-detail-site mb-0">Dirrection des régimes</p> 
+                                            <p class="subtitle-detail-site mb-0">{{'---' }}</p> 
                                         </div>
                                     </div>
 
                                     <div class="subtitle-detail-site d-flex" > 
-                                        <div class="statusIndex rounded-circle" style="background-color: #297dc8;"></div>
-                                        <p class="subtitle-detail-site mb-0">En Attente</p> 
+                                        <div class="statusIndex rounded-circle" style="background-color: {{$demandeTitre->status == 'Pending' ? '#37c40f' : ( $demandeTitre->status == 'Processed' ? '#89b2c1' : ( $demandeTitre->status == 'success' ? '#297dc8' : '#f40b0b'))}} ;"></div>
+                                        <p class="subtitle-detail-site mb-0"> {{$demandeTitre->status == 'Pending' ? 'En Attente' : ( $demandeTitre->status == 'Processed' ? 'En Cours' : ( $demandeTitre->status == 'success' ? 'Attribué' : 'Rejeté'))}}</p> 
                                     </div>
                                     
                                 </div>
@@ -218,7 +216,7 @@
                     <h6>Filtre sur les Sources d'energie</h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                
+                {{ html()->form('POST', URL::full())->open() }}
                 <div class="p-2">
                     @forelse ($sources as $source)
                         <div class="form-check">
@@ -241,6 +239,7 @@
                         <i class="fas fa-check"></i>
                     </button>
                 </div>
+                {{ html()->form()->close() }}
             </div>
           </div>
         </div>
