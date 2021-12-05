@@ -74,14 +74,14 @@ class DemandeTitre extends Model
     ];
 
     public function activite(){
-        return $this->belongsTo(activite::class);
+        return $this->belongsTo(Activite::class);
     }
 
     public function user(){
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 
     public function site(){
-        return $this->belongsTo(site::class);
+        return $this->belongsTo(Site::class);
     }
 }
