@@ -50,12 +50,12 @@
                                         <div class="d-flex">
                                             <div class="icon-grey-ligth" style="margin-right: 10px;"><i class="far fa-briefcase"></i></div>
                                             <p class="subtitle-calification-site" > 
-                                                <!--  @forelse ($site->Regime->Activites as $activite)
+                                                @forelse ($site->Regime->Activites as $activite)
                                                     {{$activite->libelle_activite}}
                                                 @empty
                                                     Aucune activité
-                                                @endforelse -->
-                                                {{$site->Regime->Activites[0]->libelle_activite}}
+                                                @endforelse
+                                        
                                             </p>
                                         
                                         </div>
