@@ -59,8 +59,11 @@
                                 <div class="row item-site">
                                     <div class="col-2 justify-content-center">
                                         <span class="border border-light">
-                                        
-                                            <img src="{{asset("storage/".$sites[0]->UploadFileSite[0]->url)}}" style="height: 40px;" alt="item1" class="rounded">    
+                                            @if (isset($site->UploadFileSite[0]->url))
+                                                <img src="{{asset("storage/".$site->UploadFileSite[0]->url)}}" style="height: 40px;" alt="item1" class="rounded">
+                                            @else
+                                                <img src="{{asset("storage/siteUpload/default.jpg")}}" style="height: 40px;" alt="item1" class="rounded">
+                                            @endif     
                                         </span>
                                     </div>
 
