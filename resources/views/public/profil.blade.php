@@ -1,6 +1,6 @@
 <x-espace-public title="Profile">
     <div class=" wrapper d-flex justify-content-center align-items-center">
-        <div class="col-lg-7 col-md-8">
+        <div class="col-lg-8 col-md-8">
             <div class="card p-5">
                 <h1 class="mb-5 fw-bold text-primary">{{__('register title')}}</h1>
                 {{ html()->form('POST', URL::full())->open() }}
@@ -106,6 +106,7 @@
                                         </x-form-group>
                                     </div>
                                 </div>
+                                <input type="hidden" name="id" value="{{$user->id}}">
                                 
                                 <button type="button" id="prev" class="btn btn-primary btn-sm">{{__('register previous')}}</button>
                                 <button type="button" id="next2" class="btn btn-primary btn-sm">{{__('register next')}}</button>
