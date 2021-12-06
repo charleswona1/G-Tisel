@@ -37,23 +37,35 @@
         </li>
 
         <li class="nav-group">
-            <a class="nav-link nav-group-toggle" href="#">
+            <a class="nav-link nav-group-toggle" href="{{route('admin.index-demande')}}">
                 <i class="fas fa-file me-4"></i>
                 Gestion des demandes
             </a>
           <ul class="nav-group-items">
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Listes de demandes (1)
+                <a class="nav-link" href="{{route('admin.index-demande')}}">
+                    @php
+                        $nbDemande = App\Models\DemandeTitre::count();
+                    @endphp
+                    Listes des demandes ({{$nbDemande}})
                 </a>
-                <a class="nav-link" href="#">
-                    Demandes traitées (0)
+                <a class="nav-link" href="{{route('admin.demande-attente')}}">
+                    @php
+                        $nbDemande = App\Models\DemandeTitre::where('status', 'Pending')->count();
+                    @endphp
+                    Demandes en attentes ({{$nbDemande}})
                 </a>
-                <a class="nav-link" href="#">
-                    Demandes en cours (0)
+                <a class="nav-link" href="{{route('admin.demande-en-cours')}}">
+                    @php
+                        $nbDemande = App\Models\DemandeTitre::where('status', 'Processed')->count();
+                    @endphp
+                    Demandes en cours ({{$nbDemande}})
                 </a>
-                <a class="nav-link" href="#">
-                    Demandes regettées (0)
+                <a class="nav-link" href="{{route('admin.demande-rejete')}}">
+                    @php
+                        $nbDemande = App\Models\DemandeTitre::where('status', 'Dismiss')->count();
+                    @endphp
+                    Demandes Rejetées ({{$nbDemande}})
                 </a>
             </li>
         

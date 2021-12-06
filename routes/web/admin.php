@@ -18,3 +18,10 @@ Route::prefix('sites')->namespace('Site')->group(function(){
         Route::get('/delete','SitesController@delete')->name('delete');
     });
 });
+
+Route::prefix('demande')->namespace('Demande')->group(function() {
+    Route::get('/', 'DemandeController@index')->name('index-demande');
+    Route::get('/attente', 'DemandeController@demandeEnAttente')->name('demande-attente');
+    Route::get('/cours', 'DemandeController@demandeEnCours')->name('demande-en-cours');
+    Route::get('/rejete', 'DemandeController@demandeEnRejetes')->name('demande-rejete');
+});
