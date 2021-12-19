@@ -2,19 +2,48 @@
 
 namespace App\Http\Controllers\EspacePublic\Sites;
 use App\Http\Controllers\Controller;
+use App\Models\Activite;
+use App\Models\Arrondissement;
 use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\DemandeTitre;
+use App\Models\Departement;
+use App\Models\Regime;
+use App\Models\Region;
+use App\Models\SourceEnergie;
 use Illuminate\Support\Facades\Auth;
 
 class SitesController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $sites = Site::all();
         $demandeTitres = DemandeTitre::all();
+        $regimes = Regime::all();
+        $sources = SourceEnergie::all();
+        $regions = Region::all();
+        $arrondissements = Arrondissement::all();
+        $departements = Departement::all();
+        $activites = Activite::all();
+
+        $optRegime = "";
+        $optSource = "";
+        $optArrond = "";
+        if ($request->regime!=null) {
+            $optRegime = Regime::find($request->regime);
+            $sites = Site::where('regime_id',$request->regime)->get();
+        }
+        if ($request->source!=null) {
+            $optSource = SourceEnergie::find($request->source);
+            $sites = Site::where('source_id',$request->source)->get();
+        }
+        if ($request->arrond!=null) {
+            $optArrond = Arrondissement::find($request->arrond);
+            
+            $sites = Site::where('arrondissement_id',$request->arrond)->get();
+        }
         //var_dump($demandeTitres[0]->site->description);
-        return view("public.site.index",compact('sites', 'demandeTitres'));
+        return view("public.site.index",compact('sites','regimes','sources','regions','arrondissements','departements','activites', 'demandeTitres','optRegime','optSource','optArrond'));
     }
 
     public function getSiteByRegime($regime_id) {
@@ -151,5 +180,20 @@ class SitesController extends Controller
         $demandeTitres = DemandeTitre::all();
         $sites = Site::all();
         return view("public.site.index",compact('sites', 'demandeTitres'));
+    }
+
+    public function search(Request $request){
+        $reqRegion = $request->region;
+        $reqdepart = $request->depart;
+
+        if ($reqRegion != null) {
+            $departements = Departement::where('region_id',$reqRegion)->get();
+            return $departements;
+        }
+
+        if ($reqdepart != null) {
+            $arrondissements = Arrondissement::where('departement_id',$reqdepart)->get();
+            return $arrondissements;
+        }
     }
 }

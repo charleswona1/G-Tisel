@@ -59,8 +59,11 @@
                                 <div class="row item-site">
                                     <div class="col-2 justify-content-center">
                                         <span class="border border-light">
-                                        
-                                            <img src="{{asset("storage/".$sites[0]->UploadFileSite[0]->url)}}" style="height: 40px;" alt="item1" class="rounded">    
+                                            @if (isset($site->UploadFileSite[0]->url))
+                                                <img src="{{asset("storage/".$site->UploadFileSite[0]->url)}}" style="height: 40px;" alt="item1" class="rounded">
+                                            @else
+                                                <img src="{{asset("storage/siteUpload/default.jpg")}}" style="height: 40px;" alt="item1" class="rounded">
+                                            @endif     
                                         </span>
                                     </div>
 
@@ -211,7 +214,7 @@
                 <div class="p-2">
                     @forelse ($regimes as $regime)
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" value="{{$regime->id}}" name="regime_id" id="regime_id">
+                            <input class="form-check-input" type="radio" value="{{$regime->id}}" name="regime_id" class="regime_id">
                             <label class="form-check-label" for="regime_id">
                                 {{$regime->name}}
                             </label>
@@ -247,7 +250,7 @@
                 <div class="p-2">
                     @forelse ($sources as $source)
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" value="{{$source->id}}" name="source_id" id="source_id">
+                            <input class="form-check-input" type="radio" value="{{$source->id}}" name="source_id" class="source_id">
                             <label class="form-check-label" for="source_id">
                                 {{$source->name}}
                             </label>
