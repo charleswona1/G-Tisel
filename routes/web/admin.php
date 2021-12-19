@@ -24,4 +24,8 @@ Route::prefix('demande')->namespace('Demande')->group(function() {
     Route::get('/attente', 'DemandeController@demandeEnAttente')->name('demande-attente');
     Route::get('/cours', 'DemandeController@demandeEnCours')->name('demande-en-cours');
     Route::get('/rejete', 'DemandeController@demandeEnRejetes')->name('demande-rejete');
+    Route::prefix('{demande}')->group(function(){
+        Route::get('/change-status','DemandeController@changeStatus')->name('change-status');;
+        Route::get('/affecte','DemandeController@affecte')->name('affecte');
+    });
 });

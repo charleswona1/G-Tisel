@@ -52,9 +52,9 @@
                                 </a>
                               
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                  <li><a class="dropdown-item" href="#">En attente</a></li>
-                                  <li><a class="dropdown-item" href="#">En cours</a></li>
-                                  <li><a class="dropdown-item" href="#">Rejeté</a></li>
+                                  <li><a class="dropdown-item" href="{{route('admin.change-status',$demande, "Pending", $demandes)}}">En attente</a></li>
+                                  <li><a class="dropdown-item" href="{{route('admin.change-status',$demande, "Proccessed", $demandes)}}">En cours</a></li>
+                                  <li><a class="dropdown-item" href="{{route('admin.change-status',$demande, "Dismiss", $demandes)}}">Rejeté</a></li>
                                 </ul>
                             </div>
                         

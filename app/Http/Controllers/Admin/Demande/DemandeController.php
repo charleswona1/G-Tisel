@@ -38,4 +38,12 @@ class DemandeController extends Controller
         return  view('admin.demandes.index',compact('demandes'));
     }
 
+    public function changeStatus(DemandeTitre $demande, $status, $demandes) {
+        $demande->status = $status;
+        $demande->save();
+
+        Session::flash('success', "Demande modifié avec succes"); 
+        return  view('admin.demandes.index',compact('demandes'));
+    }
+
 }

@@ -51,6 +51,7 @@ class SitesController extends Controller
     }
 
     public function storeDemandeTitre(Site $site, Request $request) {
+        
         $demandeTitreValidate = $request->validate([
             'name' => ['required'],
             'first_name' => ['required'],
@@ -112,6 +113,8 @@ class SitesController extends Controller
             'file19' => [''],
             'file20' => ['']
         ]);
+
+       
 
     
         /*sleep((3000/1000));
