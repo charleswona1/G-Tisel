@@ -30,13 +30,17 @@
        
         <x-footer></x-footer>
     @else
-        <x-sidebar-admin></x-sidebar-admin>
-        <div class="wrapper d-flex flex-column min-vh-100 bg-light">
-            <x-header-admin></x-header-admin>
-            <div class="body flex-grow-1 px-3">
-                {{$slot}}
+        @if (Request::is('admin/auth*'))
+            {{$slot}}
+        @else
+            <x-sidebar-admin></x-sidebar-admin>
+            <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+                <x-header-admin></x-header-admin>
+                <div class="body flex-grow-1 px-3">
+                    {{$slot}}
+                </div>
             </div>
-        </div>
+        @endif
     @endif  
     
 @endsection

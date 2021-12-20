@@ -43,10 +43,10 @@
         </style>
     @else
         <link href="{{asset('coreui/dist/css/style.css')}}" rel="stylesheet">
-        <!-- We use those styles to show code examples, you should remove them in your application.-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
         <link rel="canonical" href="https://coreui.io/docs/4.0/components/accordion/">
         <link href="{{asset('coreui/dist/css/examples.css')}}" rel="stylesheet">
+        <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
          <style>
              .btn-primary {
                 --cui-btn-bg: #3B91D1 !important;

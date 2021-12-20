@@ -20,9 +20,14 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, $guard = null)
     {
-        
+    
         if (Auth::guard($guard)->check()) {
-            return redirect()->to('/public');
+
+            if ($guard == 'admin') {
+                return redirect()->to('/admin');
+            } else {
+                return redirect()->to('/public');
+            }
         }
 
         

@@ -81,8 +81,8 @@
             </a>
           <ul class="nav-group-items">
             <li class="nav-item">
-                <a class="nav-link" href="#"> 
-                    Listes de Utilisateurs (1)
+                <a class="nav-link" href="{{route('admin.personnel')}}"> 
+                    Listes de Utilisateurs
                 </a>
                 <a class="nav-link" href="#"> 
                     Accès Utilisateurs
@@ -91,24 +91,8 @@
           </ul>
         </li>
         
-        <li class="nav-group">
-            <a class="nav-link nav-group-toggle" href="#">
-                <i class="fas fa-user-shield me-4"></i>
-                Gestion des Roles
-            </a>
-            <ul class="nav-group-items">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> 
-                        Liste des roles
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"> 
-                        Accès Utilisateurs
-                    </a>
-                </li>
-            </ul>
-        </li>
+        <li class="nav-item "><a class="nav-link" href="">Demandeur</a></li>
+        
         
 
         
