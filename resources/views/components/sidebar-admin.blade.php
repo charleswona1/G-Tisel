@@ -91,7 +91,7 @@
           </ul>
         </li>
         
-        <li class="nav-item "><a class="nav-link" href="">Demandeur</a></li>
+        <li class="nav-item "><a class="nav-link" href="{{route('admin.demandeur')}}">Demandeur</a></li>
         
         
 

@@ -10,7 +10,7 @@ Route::prefix('auth')->namespace('Auth')->name('auth.')->group(function() {
     });
 
     Route::middleware('auth:admin')->group(function () {
-        Route::get('/logout', 'LogoutController@logOut')->name('logout');
+        Route::get('/logout', 'LoginController@logout')->name('logout');
     });
     
 });
@@ -35,6 +35,11 @@ Route::middleware('auth:admin')->group(function () {
         Route::get('/attente', 'DemandeController@demandeEnAttente')->middleware('admins')->name('demande-attente');
         Route::get('/cours', 'DemandeController@demandeEnCours')->middleware('admins')->name('demande-en-cours');
         Route::get('/rejete', 'DemandeController@demandeEnRejetes')->middleware('admins')->name('demande-rejete');
+        Route::prefix('{demande}')->middleware('gestionnaire')->group(function(){
+            Route::get('/change-status','DemandeController@changeStatus')->name('change-status');;
+            Route::get('/traiment','DemandeController@traitement')->name('traitement');
+            Route::post('/traiment','DemandeController@saveTraitement');
+        });
     });
     
     Route::prefix('personnel')->namespace('Users')->middleware('supAdmin')->group(function() {
@@ -48,8 +53,9 @@ Route::middleware('auth:admin')->group(function () {
         });
     });
     
-    Route::prefix('role')->namespace('Roles')->group(function() {
-        Route::get('/', 'RolesController@index')->middleware('admins')->name('role');
+    Route::prefix('demamdeur')->namespace('Demandeurs')->group(function() {
+        Route::get('/', 'DemandeurController@index')->middleware('admins')->name('demandeur');
+        Route::get('/activation', 'DemandeurController@activeCopmte')->middleware('supAdmin')->name('activation');
+        Route::get('/delete', 'DemandeurController@delete')->middleware('supAdmin')->name('deleteCompte');
     });
 });
-

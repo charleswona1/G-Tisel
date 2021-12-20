@@ -26,7 +26,7 @@
             <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="#">
               <svg class="icon me-2">
-                <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-account-logout"></use>
+                <use xlink:href="{{route('admin.auth.logout')}}"></use>
               </svg> Logout</a>
           </div>
         </li>
