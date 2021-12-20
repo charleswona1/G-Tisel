@@ -39,7 +39,7 @@ class SitesController extends Controller
         }
         if ($request->arrond!=null) {
             $optArrond = Arrondissement::find($request->arrond);
-            
+
             $sites = Site::where('arrondissement_id',$request->arrond)->get();
         }
         //var_dump($demandeTitres[0]->site->description);
@@ -60,7 +60,7 @@ class SitesController extends Controller
         return view("public.site.index",compact('sites', 'demandeTitres'));
     }
 
-    public function getSiteByActivity($activy_id) {
+    public function getSiteByActivity($source_id) {
         $sites = Site::where('source_id', $source_id);
         $demandeTitres = DemandeTitre::all();
         return view("public.site.index",compact('sites', 'demandeTitres'));
@@ -80,6 +80,10 @@ class SitesController extends Controller
     }
 
     public function storeDemandeTitre(Site $site, Request $request) {
+
+        Session::flash('success', "Demande envoyé avec success");
+        exit();
+        
         $demandeTitreValidate = $request->validate([
             'name' => ['required'],
             'first_name' => ['required'],
@@ -142,21 +146,21 @@ class SitesController extends Controller
             'file20' => ['']
         ]);
 
-    
+
         /*sleep((3000/1000));
         Session::flash('success', "Demande envoyé avec success");
-        $this::index();
+        $this::index();*/
+        Session::flash('success', "Demande envoyé avec success");
+        exit();
 
-        return redirect()->route('public.site');*/
-
-
+    
         $demandeTitre = new DemandeTitre();
         $demandeTitre->fill($demandeTitreValidate);
         $demandeTitre->site_id = $site->id;
         $demandeTitre->user_id = Auth::user()->id;
         $demandeTitre->status = 'Pending';
-        
-        /*for ($i=1; $i <= 20; $i++) { 
+
+        /*for ($i=1; $i <= 20; $i++) {
             $fileData = $request->file('file'.$i);
             if($fileData != null) {
                 $name = date('yyyy-mm-dd HH:mm:ss').$fileData->getClientOriginalExtension();
@@ -167,11 +171,11 @@ class SitesController extends Controller
                 );
                 $demandeTitre->file.$i = $path;
             }
-            
+
         }*/
         $demandeTitre->save();
 
-       
+
         Session::flash('success', "Demande envoyé avec success");
 
         $demandeTitres = DemandeTitre::all();
