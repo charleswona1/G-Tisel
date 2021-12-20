@@ -46,4 +46,40 @@ class DemandeController extends Controller
         return  view('admin.demandes.index',compact('demandes'));
     }
 
+    public function traitement(DemandeTitre $demande) {
+        return  view('admin.demandes.demande_detail',compact('demande'));
+    }
+
+    public function saveTraitement(DemandeTitre $demande, Request $request) {
+        $data = $request->validate([
+            'name_requerant' => ['required'],
+            'categorie' => ['required'],
+            'description' => ['required'],
+            'name_responsable' => ['required'],
+            'status' => ['required'],
+        ]);
+
+        if($request->input("fichier_pdf") != null) {
+            $name = $request->name.rand(0, 9999).".".$request->input("fichier_pdf")->getClientOriginalExtension();
+            $path = $fileData->storeAs(
+                'demandeUpload',
+                $name,
+                'public'
+            );  
+            $upload = new UploadFileSite();
+            $upload->url = $path;
+            $upload->demande_id = $demande->id;
+            $upload->save();
+        }
+       
+
+        $demande->fill($data);
+        $demande->status = $request->input("status");
+        $demande->save();
+
+        Session::flash('success', "demande modifié avec succes");
+
+        return redirect()->route('admin.index-demande');
+    }
+
 }

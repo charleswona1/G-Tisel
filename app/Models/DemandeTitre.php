@@ -70,7 +70,11 @@ class DemandeTitre extends Model
         "file17",
         "file18",
         "file19",
-        "file20"
+        "file20",
+        "name_requerant",
+        "name_responsable",
+        "description",
+        "categorie"
     ];
 
     public function activite(){

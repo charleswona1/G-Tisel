@@ -143,15 +143,6 @@ class SitesController extends Controller
             'file20' => ['']
         ]);
 
-       
-
-    
-        /*sleep((3000/1000));
-        Session::flash('success', "Demande envoyé avec success");
-        $this::index();
-
-        return redirect()->route('public.site');*/
-
 
         $demandeTitre = new DemandeTitre();
         $demandeTitre->fill($demandeTitreValidate);
@@ -179,7 +170,7 @@ class SitesController extends Controller
 
         $demandeTitres = DemandeTitre::all();
         $sites = Site::all();
-        return view("public.site.index",compact('sites', 'demandeTitres'));
+        return redirect()->route('public.site');
     }
 
     public function search(Request $request){

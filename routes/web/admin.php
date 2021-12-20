@@ -26,6 +26,7 @@ Route::prefix('demande')->namespace('Demande')->group(function() {
     Route::get('/rejete', 'DemandeController@demandeEnRejetes')->name('demande-rejete');
     Route::prefix('{demande}')->group(function(){
         Route::get('/change-status','DemandeController@changeStatus')->name('change-status');;
-        Route::get('/affecte','DemandeController@affecte')->name('affecte');
+        Route::get('/traiment','DemandeController@traitement')->name('traitement');
+        Route::post('/traiment','DemandeController@saveTraitement');
     });
 });

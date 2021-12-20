@@ -12,7 +12,7 @@
                             data-bs-toggle="modal" 
                             data-bs-target="#regime">
                                 {{__('site regime')}}
-                                @if ($optRegime)
+                                @if ($optRegime ?? '')
                                     <br>
                                     <i class="far fa-check"></i>
                                     <small style="font-size: 10px">{{$optRegime->name}}</small>
