@@ -8,7 +8,7 @@
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white">
         <div class="container-lg">
             <a class="navbar-brand" href="#">
-                <img src="{{asset('assets/img/logo/brand.jpg')}}" style="height: 50px !important;width: auto !important" alt="" srcset="">
+                <img src="{{asset('assets/img/logo/brand.jpg')}}" style="height: 30px !important;width: auto !important" alt="" srcset=""> G-Tisel
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -102,7 +102,7 @@
 @if (Auth::check())
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white">
         <div class="container-lg">
-            <a class="navbar-brand" href="/"><img src="{{asset('assets/img/logo/brand.jpg')}}" style="height: 50px !important;width: auto !important" alt="" srcset=""></a>
+            <a class="navbar-brand" href="/"><img src="{{asset('assets/img/logo/brand.jpg')}}" style="height: 30px !important;width: auto !important" > G-Tisel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
