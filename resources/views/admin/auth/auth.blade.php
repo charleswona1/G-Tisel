@@ -2,6 +2,7 @@
     <div class="main-wrapper d-flex flex-column justify-content-center align-items-center">
         
         <div class="col-lg-4 rounded bg-white p-5">
+                <x-flash-bag></x-flash-bag>
                 <h1 class="mb-3 fw-bold" style="color: #5491F5">{{__('login title')}}</h1>
                 {{ html()->form('POST', URL::full())->open() }}
                     <x-form-group label="{{__('login email')}}" class="mb-3" style="color: #5491F5">

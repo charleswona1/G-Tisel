@@ -6,6 +6,7 @@
         
     </div>
 
+    <x-flash-bag></x-flash-bag>
     <div class="card bg-white p-5">
         {{ html()->form('POST', URL::full())->acceptsFiles()->open() }}
 

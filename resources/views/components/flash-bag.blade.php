@@ -56,36 +56,28 @@
     @endif
 @else
     @if (Session::has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {!! Session::get('success') !!}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="fw-semibold">Success</div> {!! Session::get('success') !!}
+            <button class="btn-close" type="button" data-coreui-dismiss="alert" aria-label="Close"></button>
+        </div>
     @endif
     @if (Session::has('error'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {!! Session::get('error') !!}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
+        <div class="fw-semibold">Erreur</div> {!! Session::get('error') !!}
+        <button class="btn-close" type="button" data-coreui-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
     @if (Session::has('warning'))
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        {!! Session::get('warning') !!}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
+        <div class="fw-semibold">Attention</div> {!! Session::get('warning') !!}
+        <button class="btn-close" type="button" data-coreui-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
     @if (Session::has('info'))
-    <div class="alert alert-info alert-dismissible fade show" role="alert">
-        {!! Session::get('info') !!}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <div class="fw-semibold">Information</div> {!! Session::get('info') !!}
+            <button class="btn-close" type="button" data-coreui-dismiss="alert" aria-label="Close"></button>
+        </div>
     @endif
 @endif
     

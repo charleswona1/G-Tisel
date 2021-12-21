@@ -2,6 +2,7 @@
     
     <div class=" wrapper d-flex justify-content-center align-items-center">
         <div class="col-lg-6">
+            <x-flash-bag></x-flash-bag>
             <div class="card">
                 <div class="row">
                     <div class="col-lg-6 img-bg"></div>

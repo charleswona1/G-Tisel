@@ -22,7 +22,7 @@ class checkAdmin
         if ($group == "Administrateur" || $group == "Super Admin" || $group == "Gestionnaire" ) {
             return $next($request);
         }else{
-            Session::flash('warning', "Vous n\'avez pas les droit necessaire pour accéder a ceux module");
+            Session::flash('warning', "ous n'avez pas les droit necessaire pour accéder a ce module");
             return redirect()->back();
         }
         
