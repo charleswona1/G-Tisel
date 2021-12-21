@@ -1,5 +1,6 @@
 <x-espace-public title="Inscription sur la platforme">
     <div class=" wrapper d-flex justify-content-center align-items-center">
+        <x-flash-bag></x-flash-bag>
         <div class="col-lg-6 col-md-8">
             <div class="card p-5">
                 <h1 class="mb-5 fw-bold text-primary">{{__('register title')}}</h1>

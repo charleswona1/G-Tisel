@@ -1,6 +1,6 @@
 <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
     <div class="sidebar-brand d-none d-md-flex">
-     <h2>Gtisel</h2>
+     <h2><img src="{{asset('assets/img/logo/brand.jpg')}}" style="height: 50px !important;width: auto !important" alt="" srcset=""></h2>
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
         <li class="nav-item">

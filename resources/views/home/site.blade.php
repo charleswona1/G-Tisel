@@ -287,7 +287,7 @@
                 <div class="p-2">
                     <div class="row">
                         <div class="col-lg-4">
-                            <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
+                            <x-form-group label="Selectioner la region" class="mb-3 text-primary">
                                 <select id="region"  class="form-select"  >
                                     <option selected>Selectinner la region</option>
                                     @foreach ($regions as $region)
@@ -298,7 +298,7 @@
                         </div>
 
                         <div class="col-lg-4">
-                            <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
+                            <x-form-group label="Selectioner le departement" class="mb-3 text-primary">
                                 <select id="depart" class="form-select"  >
                                     <option selected>Selectinner le departement</option>
                                     @foreach ($departements as $departement)
@@ -309,7 +309,7 @@
                         </div>
 
                         <div class="col-lg-4">
-                            <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
+                            <x-form-group label="Selectioner l'arrondissement" class="mb-3 text-primary">
                                 <select id="arrond"  class="form-select"  >
                                     <option selected>Selectinner l'arrondissement</option>
                                     @foreach ($arrondissements as $arrondissement)

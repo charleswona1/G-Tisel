@@ -3,8 +3,8 @@
         <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
             <i class="fas fa-bars"></i>
         </button>
-        <a class="header-brand d-md-none" href="#">
-            Gtisel
+        <a class="header-brand d-md-none" href="/admin">
+          <img src="{{asset('assets/img/logo/brand.jpg')}}" style="height: 50px !important;width: auto !important" alt="" srcset="">
         </a>
     
       <ul class="header-nav ms-3">
@@ -17,17 +17,17 @@
           <div class="dropdown-menu dropdown-menu-end pt-0">
 
             <div class="dropdown-header bg-light py-2">
-              <div class="fw-semibold">Settings</div>
+              <div class="fw-semibold">Paramettre</div>
             </div><a class="dropdown-item" href="#">
               <svg class="icon me-2">
                 <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
               </svg> Profile</a>
               
             <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">
+             <a class="dropdown-item" href="{{route('admin.auth.logout')}}">
               <svg class="icon me-2">
                 <use xlink:href="{{route('admin.auth.logout')}}"></use>
-              </svg> Logout</a>
+              </svg>Déconnexion</a>
           </div>
         </li>
       </ul>
