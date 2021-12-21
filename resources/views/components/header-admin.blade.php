@@ -4,7 +4,7 @@
             <i class="fas fa-bars"></i>
         </button>
         <a class="header-brand d-md-none" href="/admin">
-          <img src="{{asset('assets/img/logo/brand.jpg')}}" style="height: 50px !important;width: auto !important" alt="" srcset="">
+          <img src="{{asset('assets/img/logo/brand.jpg')}}" style="height: 30px !important;width: auto !important" alt="" srcset=""> G-Tisel
         </a>
     
       <ul class="header-nav ms-3">
