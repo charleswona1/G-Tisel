@@ -12,11 +12,15 @@ class Authenticate
     
     public function handle($request, Closure $next, $guard = null)
     {
+
         if (!Auth::guard($guard)->check()) {
-
-             return redirect()->route('public.auth.login');
+            if ($guard == 'admin') {
+                return redirect()->route('admin.auth.login');
+            } else {
+                return redirect()->route('public.auth.login');
+            }
         }
-
+      
         Auth::shouldUse($guard);
     
         if (Auth::user() instanceof User) {

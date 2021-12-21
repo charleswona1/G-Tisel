@@ -80,9 +80,6 @@ class SitesController extends Controller
     }
 
     public function storeDemandeTitre(Site $site, Request $request) {
-
-        Session::flash('success', "Demande envoyé avec success");
-        exit();
         
         $demandeTitreValidate = $request->validate([
             'name' => ['required'],
@@ -147,12 +144,6 @@ class SitesController extends Controller
         ]);
 
 
-        /*sleep((3000/1000));
-        Session::flash('success', "Demande envoyé avec success");
-        $this::index();*/
-        Session::flash('success', "Demande envoyé avec success");
-        exit();
-
     
         $demandeTitre = new DemandeTitre();
         $demandeTitre->fill($demandeTitreValidate);
@@ -180,7 +171,7 @@ class SitesController extends Controller
 
         $demandeTitres = DemandeTitre::all();
         $sites = Site::all();
-        return view("public.site.index",compact('sites', 'demandeTitres'));
+        return redirect()->route('public.site');
     }
 
     public function search(Request $request){

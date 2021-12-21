@@ -34,29 +34,8 @@
                             {{$demande->status == 'Pending' ? 'En Attente' : ( $demande->status == 'Processed' ? 'En Cours' : ( $demande->status == 'success' ? 'Attribué' : 'Rejeté'))}}
                         </td>
                         <td class="d-flex">
-                            <div class="dropdown" style="margin-right: 10px;">
-                                <a class="btn btn-primary text-white btn-sm btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-coreui-toggle="dropdown" aria-expanded="false">
-                                  Affecter
-                                </a>
-                              
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                  <li><a class="dropdown-item" href="#">Direction du régime</a></li>
-                                  <li><a class="dropdown-item" href="#">Département juridique</a></li>
-                                 
-                                </ul>
-                            </div>
                             
-                            <div class="dropdown" style="margin-right: 10px;">
-                                <a class="btn btn-success text-white btn-sm btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-coreui-toggle="dropdown" aria-expanded="false">
-                                    Changer le status
-                                </a>
-                              
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                  <li><a class="dropdown-item" href="#">En attente</a></li>
-                                  <li><a class="dropdown-item" href="#">En cours</a></li>
-                                  <li><a class="dropdown-item" href="#">Rejeté</a></li>
-                                </ul>
-                            </div>
+                            <a href="{{route('admin.traitement',$demande)}}" class="btn-success text-white btn-sm btn">Traiter</a>
                         
                         </td>
                     </tr>
