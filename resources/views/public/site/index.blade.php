@@ -283,9 +283,9 @@
                 <div class="p-2">
                     <div class="row">
                         <div class="col-lg-4">
-                            <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
+                            <x-form-group label="Selectioner la region" class="mb-3 text-primary">
                                 <select id="region"  class="form-select"  >
-                                    <option selected>Selectinner la region</option>
+                                    <option selected>Selectionner la region</option>
                                     @foreach ($regions as $region)
                                         <option value="{{$region->id}}">{{$region->name}}</option>
                                     @endforeach
@@ -294,9 +294,9 @@
                         </div>
 
                         <div class="col-lg-4">
-                            <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
+                            <x-form-group label="Selectioner le departement" class="mb-3 text-primary">
                                 <select id="depart" class="form-select"  >
-                                    <option selected>Selectinner le departement</option>
+                                    <option selected>Selectionner le departement</option>
                                     @foreach ($departements as $departement)
                                         <option value="{{$departement->id}}">{{$departement->name}}</option>
                                     @endforeach
@@ -305,9 +305,9 @@
                         </div>
 
                         <div class="col-lg-4">
-                            <x-form-group label="Selectioner le regime" class="mb-3 text-primary">
+                            <x-form-group label="Selectioner l'arrondissement" class="mb-3 text-primary">
                                 <select id="arrond"  class="form-select"  >
-                                    <option selected>Selectinner l'arrondissement</option>
+                                    <option selected>Selectionner l'arrondissement</option>
                                     @foreach ($arrondissements as $arrondissement)
                                         <option value="{{$arrondissement->id}}">{{$arrondissement->name}}</option>
                                     @endforeach
