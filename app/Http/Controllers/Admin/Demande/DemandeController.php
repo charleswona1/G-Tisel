@@ -62,7 +62,7 @@ class DemandeController extends Controller
 
         if($request->input("fichier_pdf") != null) {
             $name = $request->name.rand(0, 9999).".".$request->input("fichier_pdf")->getClientOriginalExtension();
-            $path = $fileData->storeAs(
+            $path = $request->input("fichier_pdf")->storeAs(
                 'attachementDemandes',
                 $name,
                 'public'
