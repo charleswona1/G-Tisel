@@ -34,7 +34,7 @@
                           </select>
                     </x-form-group>
                 </div>
-            </div>    
+            </div>
             <div class="row">
 
                 <div class="col-lg-4">
@@ -90,21 +90,21 @@
                     </x-form-group>
                 </div>
 
-            
+
             </div>
 
             <div class="mt-3 row border">
                 @for ($i =1 ; $i<15 ; $i++)
-                    @if ($demande->file.$i != null && $demande->file.$i != ||)
-                        
+                    @if ($demande->file.$i != null && $demande->file.$i != "")
+
                     @endif
                 @endfor
             </div>
-            
+
             <x-errors />
-    
+
             <button class="btn btn-primary" type="submit">Enregistrer </button>
-            
+
         {{ html()->form()->close() }}
     </div>
 </x-admin>
