@@ -58,23 +58,21 @@ class DemandeController extends Controller
             'name_responsable' => ['required'],
             'status' => ['required'],
         ]);
+        $path = "";
 
         if($request->input("fichier_pdf") != null) {
             $name = $request->name.rand(0, 9999).".".$request->input("fichier_pdf")->getClientOriginalExtension();
             $path = $fileData->storeAs(
-                'demandeUpload',
+                'attachementDemandes',
                 $name,
                 'public'
             );  
-            $upload = new UploadFileSite();
-            $upload->url = $path;
-            $upload->demande_id = $demande->id;
-            $upload->save();
+           
         }
-       
 
         $demande->fill($data);
         $demande->status = $request->input("status");
+        $demande->file16 = $path;
         $demande->save();
 
         Session::flash('success', "demande modifié avec succes");
