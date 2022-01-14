@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <x-form-group label="Nom du requerant" class="mb-3 ">
-                        <input class="form-control" type="text" placeholder="Entrez le nom du requerant" value="{{$demande->name_requerant}}" name="name_requerant" />
+                        <input class="form-control" type="text" placeholder="Entrez le nom du requerant" value="{{$demande->user->last_name}} {{$demande->user->first_name}}" name="name_requerant" />
                     </x-form-group>
                 </div>
 
@@ -91,6 +91,14 @@
                 </div>
 
             
+            </div>
+
+            <div class="mt-3 row border">
+                @for ($i =1 ; $i<15 ; $i++)
+                    @if ($demande->file.$i != null && $demande->file.$i != ||)
+                        
+                    @endif
+                @endfor
             </div>
             
             <x-errors />
