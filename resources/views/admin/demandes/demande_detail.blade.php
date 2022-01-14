@@ -95,7 +95,7 @@
 
             <div class="mt-3 row border">
                 @for ($i =1 ; $i<15 ; $i++)
-                    @if ($demande->file.$i != null && $demande->file.$i != ||)
+                    @if ($demande->file.$i != null && $demande->file.$i != "")
                         
                     @endif
                 @endfor
