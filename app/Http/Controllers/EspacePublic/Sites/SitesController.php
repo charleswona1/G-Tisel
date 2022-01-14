@@ -121,26 +121,6 @@ class SitesController extends Controller
             'caracteristique_site' => [''],
             'pays_origines' => [''],
             'standart' => [''],
-            'file1' => [''],
-            'file2' => [''],
-            'file3' => [''],
-            'file4' => [''],
-            'file5' => [''],
-            'file6' => [''],
-            'file7' => [''],
-            'file8' => [''],
-            'file9' => [''],
-            'file10' => [''],
-            'file11' => [''],
-            'file12' => [''],
-            'file13' => [''],
-            'file14' => [''],
-            'file15' => [''],
-            'file16' => [''],
-            'file17' => [''],
-            'file18' => [''],
-            'file19' => [''],
-            'file20' => ['']
         ]);
 
 
@@ -150,9 +130,15 @@ class SitesController extends Controller
         $demandeTitre->site_id = $site->id;
         $demandeTitre->user_id = Auth::user()->id;
         $demandeTitre->status = 'Pending';
+<<<<<<< HEAD
 
         /*for ($i=1; $i <= 20; $i++) {
             $fileData = $request->file('file'.$i);
+=======
+        
+        for ($i=1; $i <= 15; $i++) { 
+            $fileData = $request->file('pdf'.$i);
+>>>>>>> 15ec622f079040fdb5261d716ad09255f60e8e6f
             if($fileData != null) {
                 $name = date('yyyy-mm-dd HH:mm:ss').$fileData->getClientOriginalExtension();
                 $path = $fileData->storeAs(
@@ -162,8 +148,13 @@ class SitesController extends Controller
                 );
                 $demandeTitre->file.$i = $path;
             }
+<<<<<<< HEAD
 
         }*/
+=======
+            
+        }
+>>>>>>> 15ec622f079040fdb5261d716ad09255f60e8e6f
         $demandeTitre->save();
 
 

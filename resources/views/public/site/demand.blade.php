@@ -254,7 +254,7 @@
                                             
                                             <div class="col-lg-12">
                                                 <x-form-group label="Document justifiant votre capacité technique et votre expérience" class="mb-3 text-primary">
-                                                    <input class="form-control" name="file12" type="file" accept=".pdf">
+                                                    <input class="form-control" name="pdf1" type="file" accept=".pdf">
                                                 </x-form-group>
                                             </div>
         
@@ -264,7 +264,7 @@
                                                  derniers exercices et la liste des principaux actionnaires s’il
                                                   y’a lieu, un reçu de versement des frais d’instruction du dossier
                                                    délivré par l’Agence)" class="mb-3 text-primary">
-                                                    <input class="form-control" name="file13" type="file" accept=".pdf" >
+                                                    <input class="form-control" name="pdf2" type="file" accept=".pdf" >
                                                 </x-form-group>
                                             </div>
         
@@ -272,7 +272,7 @@
                                                 <x-form-group label="Les autorisations nécessaires délivrées par les autorités compétentes au
                                                  cas où les travaux de construction des ouvrages envisagés empiètent ou traversent des zones
                                                   protégées" class="mb-3 text-primary">
-                                                    <input class="form-control" name="file14" type="file" accept=".pdf">
+                                                    <input class="form-control" name="pdf3" type="file" accept=".pdf">
                                                 </x-form-group>
                                             </div>
                                         </div>
@@ -320,58 +320,58 @@
                                                  derniers exercices et la liste des principaux actionnaires s’il
                                                  y’a lieu, un reçu de versement des frais d’instruction du dossier
                                                  délivré par l’Agence)" class="mb-3 text-primary">
-                                                 <input class="form-control" name="file1" accept=".pdf" type="file">
+                                                 <input class="form-control" name="pdf4" accept=".pdf" type="file">
                                              </x-form-group>
                                          </div>
          
                                          <div class="col-lg-12">
                                              <x-form-group label="La description des ouvrages à réaliser (indiquez les caractéristiques techniques des installations :
                                               les sources d'énergie primaires utilisées les puissances à fournir ou à acheminer) ">
-                                                 <input class="form-control" name="file2" accept=".pdf" type="file">
+                                                 <input class="form-control" name="pdf5" accept=".pdf" type="file">
                                              </x-form-group>
                                          </div>
          
                                          <div class="col-lg-12">
                                              <x-form-group label="Une attestation de conformité des installations électriques aux standards homologués et aux normes de sécurité">
-                                                 <input class="form-control" name="file3" accept=".pdf" type="file">
+                                                 <input class="form-control" name="pdf6" accept=".pdf" type="file">
                                              </x-form-group>
                                          </div>
          
                                          <div class="col-lg-12">
                                              <x-form-group label="Une étude d'impact sur l'environnement réalisé conformément aux prescriptions en vigueur" class="mb-3 text-primary">
-                                                 <input class="form-control" name="file4" accept="image/*,.pdf" type="file">
+                                                 <input class="form-control" name="pdf7" accept="image/*,.pdf" type="file">
                                              </x-form-group>
                                          </div>
          
                                      
                                          <div class="col-lg-12">
                                              <x-form-group label="Un plan de situation à l'échelle 1/20 000ème ">
-                                                 <input class="form-control" name="file6" accept="image/*,.pdf" type="file">
+                                                 <input class="form-control" name="pdf8" accept="image/*,.pdf" type="file">
                                              </x-form-group>
                                          </div>
          
                                          <div class="col-lg-12">
                                              <x-form-group label="Une carte à l'échelle 1/5000imè indiquant les limites géographiques du périmètre de l'activité envisagée " class="mb-3 text-primary">
-                                                 <input class="form-control" accept="image/*,.pdf" name="file7" type="file">
+                                                 <input class="form-control" accept="image/*,.pdf" name="pdf9" type="file">
                                              </x-form-group>
                                          </div>
          
                                          <div class="col-lg-12">
                                              <x-form-group label="Un plan sommaire des lieux et des ouvrages projetés sur lequel sont indiquées les limites géographiques des périmètres occupés par les ouvrages et leurs annexes " class="mb-3 text-primary">
-                                                 <input class="form-control" name="file5" accept="image/*,.pdf" type="file">
+                                                 <input class="form-control" name="pdf10" accept="image/*,.pdf" type="file">
                                              </x-form-group>
                                          </div>
          
          
                                          <div class="col-lg-12">
                                              <x-form-group label="Un plan d'ensemble des ouvrages " class="mb-3 text-primary">
-                                                 <input class="form-control" accept=".pdf" name="file8" type="file">
+                                                 <input class="form-control" accept=".pdf" name="pdf11" type="file">
                                              </x-form-group>
                                          </div>
          
                                          <div class="col-lg-12">
                                              <x-form-group label="Une étude économique et financière faisant ressortir entre autres, le montant des investissements, le compte d’exploitation prévisionnel de l'activité envisagée" class="mb-3 text-primary">
-                                                 <input class="form-control" accept=".pdf" name="file9" type="file" >
+                                                 <input class="form-control" accept=".pdf" name="pdf12" type="file" >
                                              </x-form-group>
                                          </div>
                                          
@@ -381,13 +381,13 @@
          
                                          <div class="col-lg-12">
                                              <x-form-group label="Une étude tarifaire faisant ressortir les différentes catégories tarifaires retenues, ainsi que les tarifs appliqués et les faunules d'ajustement desdits tarifs" class="mb-3 text-primary">
-                                                 <input class="form-control" accept=".pdf" name="file9" type="file" >
+                                                 <input class="form-control" accept=".pdf" name="pdf13" type="file" >
                                              </x-form-group>
                                          </div>
          
                                          <div class="col-lg-12">
                                              <x-form-group label="Un projet de contrat et de cahier des charges de concession de licence ou d'autorisation conforme aux cahiers des charges- types élaborés par l’Agence et approuvés par l’Administration chargée de l'électricité" class="mb-3 text-primary">
-                                                 <input class="form-control" accept=".pdf" name="file10" type="file" >
+                                                 <input class="form-control" accept=".pdf" name="pdf14" type="file" >
                                              </x-form-group>
                                          </div>
          
@@ -405,7 +405,7 @@
          
                                          <div class="col-lg-12">
                                              <x-form-group label="Les accords éventuels entre le demandeur et les collectivités territoriales décentralisées ou les populations riveraines sur l'indemnisation des droits aliénés" class="mb-3 text-primary">
-                                                 <input class="form-control" accept=".pdf" name="file11" type="file" >
+                                                 <input class="form-control" accept=".pdf" name="pdf15" type="file" >
                                              </x-form-group>
                                          </div> 
          
