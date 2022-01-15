@@ -13,6 +13,7 @@ use App\Models\Region;
 use App\Models\SourceEnergie;
 use App\Models\UploadFileSite;
 use App\Models\SiteSourceEnergie;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
 
 class DemandeController extends Controller
@@ -60,10 +61,10 @@ class DemandeController extends Controller
         ]);
         $path = "";
 
-        if($request->input("fichier_pdf") != null) {
-            $name = $request->name.rand(0, 9999).".".$request->input("fichier_pdf")->getClientOriginalExtension();
+        if($request->file("fichier_pdf") != null) {
+            $name = $request->name.rand(0, 9999).".pdf";
             $path = $request->input("fichier_pdf")->storeAs(
-                'attachementDemandes',
+                'siteUpload',
                 $name,
                 'public'
             );  
@@ -78,6 +79,20 @@ class DemandeController extends Controller
         Session::flash('success', "demande modifié avec succes");
 
         return redirect()->route('admin.index-demande');
+    }
+
+    public function download($path,$id)
+    {
+        $demande = DemandeTitre::find($id);
+        
+        
+        $paths = 'storage/'.$demande["file".$path];
+        if (file_exists($paths)) {
+            $headers = array('Content-Type: application/pdf',);
+            return Response::download($paths,null,$headers);
+        }else{
+            return Redirect()->back();
+        }
     }
 
 }

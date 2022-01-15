@@ -86,11 +86,8 @@ class SitesController extends Controller
             $upload->save();
 
         }
-
         Session::flash('success', "site ajouté avec succes");
-
         return redirect()->route('admin.index');
-
     }
 
     public function edit(Site $site){

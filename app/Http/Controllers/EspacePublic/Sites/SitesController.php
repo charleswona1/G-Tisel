@@ -80,7 +80,7 @@ class SitesController extends Controller
     }
 
     public function storeDemandeTitre(Site $site, Request $request) {
-        
+
         $demandeTitreValidate = $request->validate([
             'name' => ['required'],
             'first_name' => ['required'],
@@ -124,44 +124,157 @@ class SitesController extends Controller
         ]);
 
 
-    
+
         $demandeTitre = new DemandeTitre();
         $demandeTitre->fill($demandeTitreValidate);
         $demandeTitre->site_id = $site->id;
         $demandeTitre->user_id = Auth::user()->id;
         $demandeTitre->status = 'Pending';
-<<<<<<< HEAD
 
-        /*for ($i=1; $i <= 20; $i++) {
-            $fileData = $request->file('file'.$i);
-=======
-        
-        for ($i=1; $i <= 15; $i++) { 
-            $fileData = $request->file('pdf'.$i);
->>>>>>> 15ec622f079040fdb5261d716ad09255f60e8e6f
-            if($fileData != null) {
-                $name = date('yyyy-mm-dd HH:mm:ss').$fileData->getClientOriginalExtension();
-                $path = $fileData->storeAs(
-                    'attachementDemandes',
-                    $name,
-                    'public'
-                );
-                $demandeTitre->file.$i = $path;
-            }
-<<<<<<< HEAD
-
-        }*/
-=======
-            
+        if($request->file('pdf1') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf1')->getClientOriginalExtension();
+            $path = $request->file('pdf1')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file1 = $path;
         }
->>>>>>> 15ec622f079040fdb5261d716ad09255f60e8e6f
+
+        if($request->file('pdf2') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf2')->getClientOriginalExtension();
+            $path = $request->file('pdf2')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file2 = $path;
+        }
+
+        if($request->file('pdf3') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf3')->getClientOriginalExtension();
+            $path = $request->file('pdf3')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file3 = $path;
+        }
+        if($request->file('pdf4') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf4')->getClientOriginalExtension();
+            $path = $request->file('pdf4')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file4 = $path;
+        }
+        if($request->file('pdf5') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf5')->getClientOriginalExtension();
+            $path = $request->file('pdf5')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file5 = $path;
+        }
+        if($request->file('pdf6') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf6')->getClientOriginalExtension();
+            $path = $request->file('pdf6')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file6 = $path;
+        }
+        if($request->file('pdf7') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf7')->getClientOriginalExtension();
+            $path = $request->file('pdf7')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file7 = $path;
+        }
+        if($request->file('pdf8') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf8')->getClientOriginalExtension();
+            $path = $request->file('pdf8')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file8 = $path;
+        }
+        if($request->file('pdf9') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf9')->getClientOriginalExtension();
+            $path = $request->file('pdf9')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file9 = $path;
+        }
+        if($request->file('pdf10') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf10')->getClientOriginalExtension();
+            $path = $request->file('pdf10')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file10 = $path;
+        }
+        if($request->file('pdf11') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf11')->getClientOriginalExtension();
+            $path = $request->file('pdf11')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file11 = $path;
+        }
+        if($request->file('pdf12') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf12')->getClientOriginalExtension();
+            $path = $request->file('pdf12')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file12 = $path;
+        }
+        if($request->file('pdf13') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf13')->getClientOriginalExtension();
+            $path = $request->file('pdf13')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file13 = $path;
+        }
+
+        if($request->file('pdf14') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf14')->getClientOriginalExtension();
+            $path = $request->file('pdf14')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file14 = $path;
+        }
+        if($request->file('pdf15') != null) {
+            $name = $request->name.rand(0, 9999).".".$request->file('pdf15')->getClientOriginalExtension();
+            $path = $request->file('pdf15')->storeAs(
+                'siteUpload',
+                $name,
+                'public'
+            );
+            $demandeTitre->file15 = $path;
+        }
+
         $demandeTitre->save();
 
 
         Session::flash('success', "Demande envoyé avec success");
 
-        $demandeTitres = DemandeTitre::all();
-        $sites = Site::all();
         return redirect()->route('public.site');
     }
 

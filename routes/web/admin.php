@@ -1,7 +1,10 @@
 <?php
 
-
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 Route::prefix('auth')->namespace('Auth')->name('auth.')->group(function() {
     Route::middleware('guest:admin')->group(function () {
@@ -40,6 +43,7 @@ Route::middleware('auth:admin')->group(function () {
             Route::get('/traiment','DemandeController@traitement')->name('traitement');
             Route::post('/traiment','DemandeController@saveTraitement');
         });
+        Route::get('/download/{path}/{id}', 'DemandeController@download' )->name('download');
     });
     
     Route::prefix('personnel')->namespace('Users')->middleware('supAdmin')->group(function() {

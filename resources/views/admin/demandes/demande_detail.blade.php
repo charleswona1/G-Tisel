@@ -93,10 +93,18 @@
 
             </div>
 
+
             <div class="mt-3 row border">
                 @for ($i =1 ; $i<15 ; $i++)
-                    @if ($demande->file.$i != null && $demande->file.$i != "")
 
+                @php
+                    \Debugbar::info($demande["file".$i]);
+                @endphp
+                    @if ($demande["file".$i] != null && $demande["file".$i] != "")
+                        <div class="col">
+                            <img src="{{ asset('assets/img/PDF_file.png')}}" style="height: 100px;" alt="item1">
+                            <a href="{{route('admin.download',["path"=>$i,"id"=>$demande->id])}}">Télechargé</a>
+                        </div>
                     @endif
                 @endfor
             </div>
