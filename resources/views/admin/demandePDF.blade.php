@@ -5,19 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
     <script defer src="{{ asset('fontawesome/js/all.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/stepper/bs-stepper.min.css') }}">  
+    <link rel="stylesheet" href="{{ asset('plugins/stepper/bs-stepper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/magnific-popup/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{ asset('plugins/owl-caroussel/owl.carousel.min.css')}}">  
-    
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('plugins/owl-caroussel/owl.carousel.min.css')}}">
 </head>
 <body>
     <div class="container-fluid">
@@ -55,7 +49,7 @@
                     <input class="form-control" type="text" step="0.001" placeholder="Entrez votre domicile" value="{{$domicile}}" name="domicile" />
                 </x-form-group>
             </div>
-            
+
         </div>
 
         <div>
@@ -79,7 +73,7 @@
                     <input class="form-control" type="text" step="0.001" placeholder="Entrez votre numéro de téléphone" value="{{$tel}}" name="tel" />
                 </x-form-group>
             </div>
-            
+
         </div>
 
         <div class="row">
@@ -100,7 +94,7 @@
                     <input class="form-control" type="text" step="0.001" placeholder="Entrez votre code postal" value="{{$code_postal}}" name="code_postal"/>
                 </x-form-group>
             </div>
-            
+
         </div>
 
         <div class="col-lg-12">
@@ -145,7 +139,7 @@
                     <input class="form-control" type="text" step="0.001" value="{{$code_postal1}}" placeholder="Entrez votre code postal" name="code_postal1"/>
                 </x-form-group>
             </div>
-            
+
         </div>
 
         <div class="row">
@@ -176,7 +170,7 @@
                     <input class="form-control" type="text" step="0.001" value="{{$code_postal2}}" placeholder="Entrez votre code postal" name="code_postal2"/>
                 </x-form-group>
             </div>
-            
+
         </div>
 
         <div class="row">
@@ -207,7 +201,7 @@
                     <input class="form-control" type="text" step="0.001" value="{{$code_postal3}}" placeholder="Entrez votre code postal" name="code_postal3"/>
                 </x-form-group>
             </div>
-            
+
         </div>
 
         <div class="row">
@@ -238,7 +232,7 @@
                     <input class="form-control" type="text" step="0.001" value="{{$code_postal4}}" placeholder="Entrez votre code postal" name="code_postal4"/>
                 </x-form-group>
             </div>
-            
+
         </div>
 
         <!-- test -->
@@ -268,7 +262,7 @@
                     <small class="text-danger d-none" id="msg-err-email">{{__("register email-error")}}</small>
                 </x-form-group>
             </div>
-        </div>      
+        </div>
 
         {{-- <div class="col-lg-12">
             <x-form-group label="Durée probable des La durée de la concession, de la licence ou de l'autorisation demandée" class="mb-3 text-primary">
