@@ -98,8 +98,47 @@ class DemandeController extends Controller
 
     public function generatePDF(DemandeTitre $demande)
     {
+
+        $data = [
+            'fisrt_name'=>$demande->user->fisrt_name,
+            'last_name'=>$demande->user->last_name,
+            'raison_social'=>$demande->raison_social,
+            'nationalite'=>$demande->nationalite,
+            'domicile'=>$demande->domicile,
+            'ville'=>$demande->ville,
+            'lieu'=>$demande->lieu,
+            'tel'=>$demande->tel,
+            'courriel'=>$demande->courriel,
+            'fax'=>$demande->fax,
+            'code_postal'=>$demande->code_postal,
+            'email'=>$demande->email,
+            'objet'=>$demande->objet,
+            'fonction_1'=>$demande->fonction_1,
+            'courriel1'=>$demande->courriel1,
+            'fax1'=>$demande->fax1,
+            'code_postal1'=>$demande->code_postal1,
+            'fonction_1'=>$demande->fonction_1,
+            'courriel1'=>$demande->courriel1,
+            'fax1'=>$demande->fax1,
+            'code_postal1'=>$demande->code_postal1,
+            'fonction_2'=>$demande->fonction_2,
+            'courriel2'=>$demande->courriel2,
+            'fax2'=>$demande->fax2,
+            'code_postal2'=>$demande->code_postal2,
+            'fonction_3'=>$demande->fonction_3,
+            'courriel3'=>$demande->courriel3,
+            'fax3'=>$demande->fax3,
+            'code_postal3'=>$demande->code_postal3,
+            'fonction_4'=>$demande->fonction_4,
+            'courriel4'=>$demande->courriel4,
+            'fax4'=>$demande->fax4,
+            'code_postal4'=>$demande->code_postal4,
+            'perimetre'=>$demande->perimetre,
+            'libelle_activite'=>$demande->activite->libelle_activite,
+            'lieu_implementation'=>$demande->lieu_implementation
+        ];
           
-        $pdf = PDF::loadView('demandePDF', $demande);
+        $pdf = PDF::loadView('demandePDF', $data);
     
         return $pdf->download('demande.pdf');
     }
