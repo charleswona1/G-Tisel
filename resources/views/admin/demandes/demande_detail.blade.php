@@ -90,7 +90,7 @@
                     </x-form-group>
                 </div>
 
-
+                <a href="{{route('admin.download-demand',$demande)}}" class="btn btn-info col-s"> Télecharger la demande</a>
             </div>
 
 
@@ -101,7 +101,7 @@
                     \Debugbar::info($demande["file".$i]);
                 @endphp
                     @if ($demande["file".$i] != null && $demande["file".$i] != "")
-                        <div class="col">
+                        <div class="col d-flex flex-column">
                             <img src="{{ asset('assets/img/PDF_file.png')}}" style="height: 100px;" alt="item1">
                             <a href="{{route('admin.download',["path"=>$i,"id"=>$demande->id])}}">Télechargé</a>
                         </div>

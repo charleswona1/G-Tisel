@@ -18,6 +18,7 @@ Route::prefix('auth')->namespace('Auth')->name('auth.')->group(function() {
     
 });
 Route::middleware('auth:admin')->group(function () {
+
     Route::get('/', 'TableauBordController@index')->name('dashboard');
     Route::prefix('sites')->namespace('Site')->middleware('admins')->group(function(){
         Route::get('/', 'SitesController@index')->middleware('admins')->name('index');
@@ -42,8 +43,10 @@ Route::middleware('auth:admin')->group(function () {
             Route::get('/change-status','DemandeController@changeStatus')->name('change-status');;
             Route::get('/traiment','DemandeController@traitement')->name('traitement');
             Route::post('/traiment','DemandeController@saveTraitement');
+            Route::get('/download-demand', 'DemandeController@generatePDF' )->name('download-demand');
         });
         Route::get('/download/{path}/{id}', 'DemandeController@download' )->name('download');
+        
     });
     
     Route::prefix('personnel')->namespace('Users')->middleware('supAdmin')->group(function() {
