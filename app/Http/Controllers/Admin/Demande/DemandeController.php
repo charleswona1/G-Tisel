@@ -15,6 +15,7 @@ use App\Models\UploadFileSite;
 use App\Models\SiteSourceEnergie;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
+use PDF;
 
 class DemandeController extends Controller
 {
@@ -93,6 +94,14 @@ class DemandeController extends Controller
         }else{
             return Redirect()->back();
         }
+    }
+
+    public function generatePDF(DemandeTitre $demande)
+    {
+          
+        $pdf = PDF::loadView('demandePDF', $demande);
+    
+        return $pdf->download('demande.pdf');
     }
 
 }
