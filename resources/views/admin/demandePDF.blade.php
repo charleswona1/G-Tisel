@@ -11042,7 +11042,9 @@
         /* body {
             height: 100% !important;
         } */
-
+        .mg{
+            margin-bottom: 10px;
+        }
         body {
             font-family: 'Nunito', sans-serif;
             background-color: #e2e8f0;

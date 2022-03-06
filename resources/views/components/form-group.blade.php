@@ -3,7 +3,7 @@
     @if (isset($style))style="{{ $style }}"@endif
 >
     @if (isset($label))
-        <label @if (isset($name))for="{{ $name }}"@endif>
+        <label @if (isset($name))for="{{ $name }}"@endif class="mg">
             {{ $label }}
             @if (isset($optionnal) && !!$optionnal)
                 <small class="text-muted font-light">
