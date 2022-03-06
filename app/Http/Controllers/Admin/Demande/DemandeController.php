@@ -138,7 +138,7 @@ class DemandeController extends Controller
             'lieu_implementation'=>$demande->lieu_implementation
         ];
           
-        $pdf = PDF::loadView('demandePDF', $data);
+        $pdf = PDF::loadView('admin.demandePDF', $data);
     
         return $pdf->download('demande.pdf');
     }
